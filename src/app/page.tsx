@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <main>
+    <main className="bg-white">
       <Image
         src="/images/0.jpg"
         alt="mainhero"
@@ -10,6 +10,11 @@ export default function Home() {
         height={1600}
         className="w-full h-[660px] object-cover"
       />
+      <div className="flex flex-col gap-y-8 text-center">
+        <h1 className="text-4xl text-black mt-8">
+          HOBSON LODGE
+        </h1>
+      </div>
     </main>
   );
 }
