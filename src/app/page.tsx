@@ -11,7 +11,7 @@ export default function Home() {
         className="w-full h-[660px] object-cover"
       />
       <div className="flex flex-col gap-y-8 text-center">
-        <h1 className="text-4xl text-black mt-8">
+        <h1 className="text-8xl text-black mt-8">
           HOBSON LODGE
         </h1>
       </div>

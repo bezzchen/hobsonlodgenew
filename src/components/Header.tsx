@@ -4,7 +4,7 @@ import Image from "next/image";
 export default function Header () {
     return (
         <header className="w-full bg-white fixed z-60">
-            <div className="mx-w-7xl mx-auto px-4 py-6">
+            <div className="mx-w-7xl mx-auto px-4 py-6 flex">
                 <Link href="/">
                     <Image
                         src="/images/hobsonlodgelogo.png"
@@ -13,6 +13,11 @@ export default function Header () {
                         height={40}
                     />
                 </Link>
+                <nav className="flex item-center gap-8 text-sm">
+                    <Link href="/rooms" className="text-black">
+                        rooms
+                    </Link>
+                </nav>
             </div>
         </header>
     );
