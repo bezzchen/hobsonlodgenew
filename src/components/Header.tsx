@@ -4,8 +4,8 @@ import Image from "next/image";
 export default function Header () {
     return (
         <header className="w-full bg-white fixed z-60 border-gray-200">
-            <div className="mx-w-7xl px-6 py-4 flex justify-between mx-auto items-center">
-                <Link href="/">
+            <div className="mx-w-2xl px-6 py-4 flex justify-between mx-auto items-center">
+                <Link href="/" className="flex items-center">
                     <Image
                         src="/images/hobsonlodgelogo.png"
                         alt="logo"
