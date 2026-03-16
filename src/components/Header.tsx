@@ -3,8 +3,8 @@ import Image from "next/image";
 
 export default function Header () {
     return (
-        <header className="w-full bg-white fixed z-60">
-            <div className="mx-w-7xl mx-auto px-4 py-6 flex">
+        <header className="w-full bg-white fixed z-60 border-gray-200">
+            <div className="mx-w-7xl px-6 py-4 flex justify-between mx-auto items-center">
                 <Link href="/">
                     <Image
                         src="/images/hobsonlodgelogo.png"
