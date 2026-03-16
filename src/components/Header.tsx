@@ -17,6 +17,18 @@ export default function Header () {
                     <Link href="/rooms" className="text-black">
                         rooms
                     </Link>
+                    <Link href="/rooms" className="text-black">
+                        location
+                    </Link>
+                    <Link href="/rooms" className="text-black">
+                        rules
+                    </Link>
+                    <Link href="/rooms" className="text-black">
+                        contact
+                    </Link>
+                    <Link href="/rooms" className="text-black">
+                        book
+                    </Link>
                 </nav>
             </div>
         </header>
