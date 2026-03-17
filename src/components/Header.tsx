@@ -10,10 +10,10 @@ export default function Header () {
                         src="/images/hobsonlodgelogo.png"
                         alt="logo"
                         width={300}
-                        height={40}
+                        height={20}
                     />
                 </Link>
-                <nav className="flex item-center gap-8 text-sm">
+                <nav className="flex items-center gap-8 text-sm">
                     <Link href="/rooms" className="text-black">
                         rooms
                     </Link>
@@ -26,7 +26,7 @@ export default function Header () {
                     <Link href="/rooms" className="text-black">
                         contact
                     </Link>
-                    <Link href="/rooms" className="text-black">
+                    <Link href="/rooms" className="text-white bg-black px-3 py-1 rounded-md">
                         book
                     </Link>
                 </nav>
