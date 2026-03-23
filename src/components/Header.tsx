@@ -17,13 +17,13 @@ export default function Header () {
                     <Link href="/rooms" className="text-black">
                         rooms
                     </Link>
-                    <Link href="/rooms" className="text-black">
+                    <Link href="/location" className="text-black">
                         location
                     </Link>
-                    <Link href="/rooms" className="text-black">
+                    <Link href="/rules" className="text-black">
                         rules
                     </Link>
-                    <Link href="/rooms" className="text-black">
+                    <Link href="/contact" className="text-black">
                         contact
                     </Link>
                     <Link href="/rooms" className="text-white bg-black px-3 py-1 rounded-md">
