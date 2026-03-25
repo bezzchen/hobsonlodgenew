@@ -18,7 +18,18 @@ export default function Home() {
           IN THE HEART OF CBD
         </h2>
         <p className="max-w-4xl text-black text-xl mx-auto">
-          Hobson Lodge is newly refurbished with decorated bed rooms, hotel grade mattress, spacious living room and kitchen. Hobson Lodge is good to stay here for a night or for weeks, stay here while on business trip or at some kind of concerts or work and study in Auckland - either way our lodge is the best possible variant. Feel free to contact us anytime in case you have any questions or concerns.
+        Hobson Lodge offers a comfortable and welcoming stay in the centre of Auckland, ideal for solo travellers, backpackers, and long-stay guests.
+Conveniently located just 300 metres from Sky Tower, with easy access to public transport and the motorway, getting around the city is simple and efficient. The entrance is right by the main route connecting to State Highway 1, making travel to and from the lodge quick and convenient.
+Designed with a focus on air quality, comfort, and personal space, we provide a more enjoyable and relaxing hostel experience:
+Privacy curtains for every bed, creating your own personal space 
+Individual power outlet at each bed for convenient charging 
+Large windows in every room with plenty of natural light 
+Fresh air ventilation system in all rooms, providing a cleaner and more comfortable environment 
+Secure double-door access system (guest-only entry) for added safety 
+Guests can also enjoy a clean and well-maintained environment, a fully equipped kitchen, and a relaxed, friendly atmosphere.
+More privacy, more comfort, more fresh air – a better hostel experience.
+Whether you're staying for a night or a few weeks, Hobson Lodge is a great choice for business trips, concerts, work, or study in Auckland.
+If you have any questions, feel free to contact us anytime – we’re always happy to help.
         </p>
       </div>
     </main>
