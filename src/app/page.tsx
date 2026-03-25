@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { GoogleMapsEmbed } from "@next/third-parties/google";
 
 export default function Home() {
   return (
@@ -32,6 +33,13 @@ Whether you're staying for a night or a few weeks, Hobson Lodge is a great choic
 If you have any questions, feel free to contact us anytime – we’re always happy to help.
         </p>
       </div>
+      <GoogleMapsEmbed
+        apiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}
+        height={450}
+        width="100%"
+        mode="place"
+        q="224+Hobson+Street+Auckland+CBD,+Auckland+1010,+New+Zealand"
+      />
     </main>
   );
 }
