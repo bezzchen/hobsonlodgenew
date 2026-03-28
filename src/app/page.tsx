@@ -18,7 +18,7 @@ export default function Home() {
         <h2 className="text-6xl text-black">
           IN THE HEART OF CBD
         </h2>
-        <p className="max-w-4xl text-black text-xl mx-auto">
+        <p className="max-w-4xl text-black text-xl mx-auto pb-10">
         Hobson Lodge offers a comfortable and welcoming stay in the centre of Auckland, ideal for solo travellers, backpackers, and long-stay guests.
 Conveniently located just 300 metres from Sky Tower, with easy access to public transport and the motorway, getting around the city is simple and efficient. The entrance is right by the main route connecting to State Highway 1, making travel to and from the lodge quick and convenient.
 Designed with a focus on air quality, comfort, and personal space, we provide a more enjoyable and relaxing hostel experience:
@@ -33,13 +33,15 @@ Whether you're staying for a night or a few weeks, Hobson Lodge is a great choic
 If you have any questions, feel free to contact us anytime – we’re always happy to help.
         </p>
       </div>
-      <GoogleMapsEmbed
-        apiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}
-        height={450}
-        width="100%"
-        mode="place"
-        q="224+Hobson+Street+Auckland+CBD,+Auckland+1010,+New+Zealand"
-      />
+      <div className="w-full overflow-hidden rounded-4xl max-w-6xl mx-auto shadow-lg">
+        <GoogleMapsEmbed
+          apiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}
+          height={450}
+          width="100%"
+          mode="place"
+          q="224+Hobson+Street+Auckland+CBD,+Auckland+1010,+New+Zealand"
+        />
+      </div>
     </main>
   );
 }
