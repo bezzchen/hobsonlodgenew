@@ -10,10 +10,13 @@ export default function rooms() {
                 height={800}
                 className="w-full object-cover h-[680px]"
             />
-            <div className="text-center flex flex-col gap-y-8">
-                <h1 className="text-6xl text-black pt-10">
+            <div className="text-center flex flex-col gap-y-8 text-black ">
+                <h1 className="text-6xl pt-10">
                     OUR ROOMS
                 </h1>   
+                <h2 className="text-xl">
+                Choose from our range of comfortable and well-appointed accommodations
+                </h2>
             </div>
         </main>
     )
