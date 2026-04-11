@@ -9,7 +9,7 @@ export default function Home() {
         alt="mainhero"
         width={800}
         height={1600}
-        className="w-full h-[700px] object-cover
+        className="w-full h-[700px] object-cover"
       />
       <div className="flex flex-col gap-y-8 text-center">
         <h1 className="text-8xl text-black mt-8">
