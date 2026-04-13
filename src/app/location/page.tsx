@@ -11,7 +11,7 @@ export default function location() {
             />
             <div className="flex flex-col gap-y-8 text-center">  
                 <h1 className="text-6xl text-black pt-10">
-                    EXPLORE AUCKLAND
+                    CBD LOCATION
                 </h1>
             </div>
         </main>
