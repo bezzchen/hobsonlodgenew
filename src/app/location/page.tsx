@@ -1,4 +1,6 @@
 import Image from 'next/image';
+import { GoogleMapsEmbed } from "@next/third-parties/google"
+
 export default function location() {
     return (
         <main className="bg-white">
@@ -16,6 +18,15 @@ export default function location() {
                 <h2 className="text-3xl">
                     close and convenient 
                 </h2>
+                <div className="max-w-6xl mx-auto w-full rounded-4xl overflow-hidden shadow-lg">
+                    <GoogleMapsEmbed
+                        apiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}
+                        height={450}
+                        width="100%"
+                        mode="place"
+                        q="224+Hobson+Street+Auckland+CBD,+Auckland+1010,+New+Zealand"
+                    />
+                </div>
             </div>
         </main>
     )
