@@ -26,7 +26,7 @@ export default function Header () {
                     <Link href="/contact" className="text-black">
                         contact
                     </Link>
-                    <Link href="/rooms" className="text-white bg-black px-3 py-1 rounded-md">
+                    <Link href="https://hotels.cloudbeds.com/en/reservation/CAZrqh" className="text-white bg-black px-3 py-1 rounded-md">
                         book
                     </Link>
                 </nav>
