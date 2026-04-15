@@ -14,7 +14,7 @@ export default function rooms() {
                 <h1 className="text-6xl pt-10">
                     OUR ROOMS
                 </h1>   
-                <h2 className="text-xl">
+                <h2 className="text-3xl">
                 Choose from our range of comfortable and well-appointed accommodations
                 </h2>
             </div>
