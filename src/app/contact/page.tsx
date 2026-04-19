@@ -2,6 +2,9 @@
 export default function contact() {
     return (
         <main>
+            <h1>
+                Contact Us
+            </h1>
             <div className="w-full bg-white pt-20">
                 <section className="max-w-2xl mx-auto p-6 bg-white text-black">
                     <form className="flex flex-col gap-4">
