@@ -13,9 +13,11 @@ export async function POST(request: Request) {
       from: 'Contact Form <onboarding@resend.dev>', // Use your verified domain here later
       to: ['your-email@example.com'], // Where you want to receive the messages
       subject: `New Message from ${name}`,
-      react: contact({ 
+      react: contact({
         userFirstname: name,
-        // You can update your template to accept phone and message too
+        email,
+        phone,
+        message,
       }),
     });
 
