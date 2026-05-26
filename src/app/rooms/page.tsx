@@ -1,23 +1,183 @@
 import Image from "next/image";
+import Link from "next/link";
 
-export default function rooms() {
-    return (
-        <main className="bg-white">
-            <Image
-                src="/images/0.jpg"
-                alt="hero image"
-                width={1600}
-                height={800}
-                className="w-full object-cover h-[680px]"
-            />
-            <div className="text-center flex flex-col gap-y-8 text-black ">
-                <h1 className="text-6xl pt-10">
-                    OUR ROOMS
-                </h1>   
-                <h2 className="text-3xl">
-                Choose from our range of comfortable and well-appointed accommodations
-                </h2>
-            </div>
-        </main>
-    )
+const roomOptions = [
+  {
+    title: "Bed in 8 Bed Mixed Dormitory Room",
+    image: "/images/bedin8_1.jpg",
+    summary: "Shared bathroom, shared toilet, ventilation system and free WiFi.",
+    details: [
+      "220-240 volt circuits",
+      "Cable television",
+      "Ceiling fan",
+      "Hairdryer",
+      "Microwave",
+      "Wireless internet",
+      "Individual under bed locker",
+      "Individual storage cabinet",
+    ],
+  },
+  {
+    title: "Bed in 6 Bed Mixed Dormitory Room",
+    image: "/images/bedin6m_1.jpg",
+    summary: "Shared bathroom, shared toilet, ventilation system and free WiFi.",
+    details: [
+      "220-240 volt circuits",
+      "Ceiling fan",
+      "Hairdryer",
+      "Wireless internet",
+      "Individual under bed locker",
+      "Individual storage cabinet",
+    ],
+  },
+  {
+    title: "Bed in 6 Bed Female Dormitory Room",
+    image: "/images/bedin6f_1.jpg",
+    summary: "Female dormitory accommodation with shared bathroom, shared toilet, ventilation and free WiFi.",
+    details: [
+      "220-240 volt circuits",
+      "Ceiling fan",
+      "Hairdryer",
+      "Wireless internet",
+      "Individual under bed locker",
+      "Individual storage cabinet",
+    ],
+  },
+  {
+    title: "Double Room with Shared Bathroom",
+    image: "/images/dbs_1.jpg",
+    summary: "A private double room with shared bathroom access and free WiFi.",
+    details: [
+      "220-240 volt circuits",
+      "Ceiling fan",
+      "Hairdryer",
+      "Wireless internet",
+    ],
+  },
+  {
+    title: "Double Room with Ensuite",
+    image: "/images/dbe_1.jpg",
+    summary: "A private double room with ensuite bathroom, microwave and free WiFi.",
+    details: [
+      "Private bathroom",
+      "220-240 volt circuits",
+      "Ceiling fan",
+      "Hairdryer",
+      "Microwave",
+      "Wireless internet",
+    ],
+  },
+];
+
+const amenities = [
+  "Room services",
+  "Heaters in all rooms",
+  "Onsite parking ($15 NZD/day)",
+  "Fully supplied bed linen",
+  "Individual under bed lockers",
+  "Individual storage cabinets",
+  "Ventilation system in all rooms",
+  "Laundry facilities",
+  "Fans in all rooms",
+  "Free WiFi access in all areas",
+  "Internet cafe",
+  "Superior bathrooms",
+  "Modern kitchen",
+  "Hotel grade mattresses",
+];
+
+export default function Rooms() {
+  return (
+    <main className="bg-[#f8f3e8] pt-28 text-[#18130c] sm:pt-24">
+      <section className="px-5 py-16 lg:px-8">
+        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
+          <div>
+            <p className="text-sm font-black uppercase text-[#2f85a7]">Our rooms</p>
+            <h1 className="mt-4 text-6xl font-black uppercase leading-none md:text-7xl">
+              Cozy and comfortable accommodation.
+            </h1>
+          </div>
+          <p className="text-lg leading-8 text-[#3a3024]">
+            Hobson Lodge offers mixed dormitory beds, a female dormitory option and double rooms with either shared bathroom access or a private ensuite.
+          </p>
+        </div>
+      </section>
+
+      <section className="px-5 pb-20 lg:px-8">
+        <div className="mx-auto grid max-w-7xl gap-6">
+          {roomOptions.map((room, index) => (
+            <article
+              key={room.title}
+              className="grid overflow-hidden border border-[#18130c]/15 bg-white lg:grid-cols-2"
+            >
+              <div className={`relative min-h-[320px] ${index % 2 === 1 ? "lg:order-2" : ""}`}>
+                <Image
+                  src={room.image}
+                  alt={room.title}
+                  fill
+                  sizes="(min-width: 1024px) 50vw, 100vw"
+                  className="object-cover"
+                />
+              </div>
+              <div className="flex flex-col justify-center p-6 sm:p-10">
+                <p className="text-sm font-black uppercase text-[#4f6f57]">
+                  Limited onsite parking available by pre-booking; charges apply.
+                </p>
+                <h2 className="mt-3 text-4xl font-black uppercase leading-none">{room.title}</h2>
+                <p className="mt-5 text-lg leading-8 text-[#3a3024]">{room.summary}</p>
+                <ul className="mt-8 grid gap-4 sm:grid-cols-2">
+                  {room.details.map((detail) => (
+                    <li key={detail} className="border-t border-[#d9b13b]/60 pt-3 font-semibold">
+                      {detail}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="bg-[#18130c] px-5 py-16 text-[#f8f3e8] lg:px-8">
+        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.8fr_1.2fr]">
+          <div>
+            <p className="text-sm font-black uppercase text-[#d9b13b]">Amenities</p>
+            <h2 className="mt-4 text-5xl font-black uppercase leading-none">
+              Facilities across the hostel.
+            </h2>
+          </div>
+          <div className="grid gap-4 sm:grid-cols-2">
+            {amenities.map((item) => (
+              <p key={item} className="border border-white/20 p-5 font-semibold">
+                {item}
+              </p>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="px-5 py-20 text-center lg:px-8">
+        <h2 className="mx-auto max-w-4xl text-5xl font-black uppercase leading-none md:text-6xl">
+          Enquire now or book direct.
+        </h2>
+        <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-[#3a3024]">
+          Ask about room availability, parking pre-booking or the best room type for your stay.
+        </p>
+        <div className="mt-8 flex flex-wrap justify-center gap-4">
+          <Link
+            href="https://hotels.cloudbeds.com/en/reservation/CAZrqh"
+            className="border border-[#18130c] bg-[#18130c] px-6 py-3 text-sm font-bold uppercase text-white hover:bg-[#d9b13b] hover:text-[#18130c]"
+          >
+            Book now
+          </Link>
+          <Link
+            href="/contact"
+            className="border border-[#18130c] px-6 py-3 text-sm font-bold uppercase hover:bg-white"
+          >
+            Enquire now
+          </Link>
+        </div>
+      </section>
+    </main>
+  );
 }

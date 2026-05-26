@@ -10,6 +10,7 @@ export async function POST(request: Request) {
     const name = typeof body.name === "string" ? body.name.trim() : "";
     const email = typeof body.email === "string" ? body.email.trim() : "";
     const phone = typeof body.phone === "string" ? body.phone.trim() : "";
+    const subject = typeof body.subject === "string" ? body.subject.trim() : "";
     const message = typeof body.message === "string" ? body.message.trim() : "";
 
     if (!name || !email || !message) {
@@ -31,11 +32,12 @@ export async function POST(request: Request) {
       from:
         process.env.RESEND_FROM ?? "Contact Form <onboarding@resend.dev>",
       to: [to],
-      subject: `New message from ${name}`,
+      subject: subject ? `New enquiry: ${subject}` : `New message from ${name}`,
       react: ContactEmail({
         userFirstname: name,
         email,
         phone,
+        subject,
         message,
       }),
     });

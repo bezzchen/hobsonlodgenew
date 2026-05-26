@@ -24,6 +24,7 @@ export default function ContactForm() {
           name: formData.get("name"),
           email: formData.get("email"),
           phone: formData.get("phone"),
+          subject: formData.get("subject"),
           message: formData.get("message"),
         }),
       });
@@ -49,7 +50,7 @@ export default function ContactForm() {
   }
 
   const inputClassName =
-    "w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black placeholder-gray-400 text-black";
+    "w-full border border-[#18130c]/20 bg-[#f8f3e8] p-4 text-[#18130c] placeholder-[#6f6254] focus:outline-none focus:ring-2 focus:ring-[#d9b13b]";
 
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-4 text-left">
@@ -99,6 +100,21 @@ export default function ContactForm() {
       </div>
 
       <div>
+        <label htmlFor="subject" className="sr-only">
+          Subject
+        </label>
+        <input
+          id="subject"
+          name="subject"
+          type="text"
+          placeholder="Subject"
+          className={inputClassName}
+          required
+          disabled={status === "loading"}
+        />
+      </div>
+
+      <div>
         <label htmlFor="message" className="sr-only">
           Message
         </label>
@@ -115,7 +131,7 @@ export default function ContactForm() {
 
       {status === "success" && (
         <p className="text-green-700 text-sm" role="status">
-          Thank you — your message has been sent. We will get back to you soon.
+          Thank you - your message has been sent. We will get back to you soon.
         </p>
       )}
 
@@ -128,9 +144,9 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={status === "loading"}
-        className="w-full bg-black text-white font-semibold py-4 rounded-lg hover:bg-gray-800 transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
+        className="w-full border border-[#18130c] bg-[#18130c] py-4 font-bold uppercase text-white hover:bg-[#d9b13b] hover:text-[#18130c] disabled:cursor-not-allowed disabled:opacity-60"
       >
-        {status === "loading" ? "Sending…" : "Send message"}
+        {status === "loading" ? "Sending..." : "Send message"}
       </button>
     </form>
   );

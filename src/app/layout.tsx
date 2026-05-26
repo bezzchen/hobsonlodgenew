@@ -15,8 +15,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Hobson Lodge",
-  description: "Hobson Lodge",
+  title: "Hobson Lodge | Auckland CBD Hostel",
+  description: "Newly refurbished Auckland CBD hostel with mixed dorms, female dorms, double rooms, free WiFi, modern kitchen and onsite parking by pre-booking.",
 };
 
 export default function RootLayout({

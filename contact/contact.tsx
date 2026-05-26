@@ -2,6 +2,7 @@ interface ContactEmailProps {
   userFirstname: string;
   email?: string;
   phone?: string;
+  subject?: string;
   message?: string;
 }
 
@@ -9,6 +10,7 @@ export default function ContactEmail({
   userFirstname,
   email,
   phone,
+  subject,
   message,
 }: ContactEmailProps) {
   return (
@@ -25,6 +27,11 @@ export default function ContactEmail({
       {phone ? (
         <p>
           <strong>Phone:</strong> {phone}
+        </p>
+      ) : null}
+      {subject ? (
+        <p>
+          <strong>Subject:</strong> {subject}
         </p>
       ) : null}
       {message ? (
