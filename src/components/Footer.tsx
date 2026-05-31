@@ -11,7 +11,7 @@ export default function Footer() {
                     </h2>
                     <Link
                         href="https://hotels.cloudbeds.com/en/reservation/CAZrqh"
-                        className="mt-6 inline-flex border border-[#d9b13b] bg-[#d9b13b] px-5 py-3 text-sm font-bold uppercase text-[#18130c] hover:bg-transparent hover:text-[#d9b13b]"
+                        className="mt-6 inline-flex rounded-lg border border-[#d9b13b] bg-[#d9b13b] px-5 py-3 text-sm font-bold uppercase text-[#18130c] shadow-lg hover:bg-transparent hover:text-[#d9b13b]"
                     >
                         Book direct
                     </Link>

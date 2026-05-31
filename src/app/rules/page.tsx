@@ -87,7 +87,7 @@ export default function Rules() {
       <section className="px-5 pb-20 lg:px-8">
         <div className="mx-auto grid max-w-7xl gap-4 md:grid-cols-2">
           {rules.map((rule, index) => (
-            <article key={rule.title} className="border border-[#18130c]/15 bg-white p-6">
+            <article key={rule.title} className="rounded-xl border border-[#18130c]/15 bg-white p-6 shadow-lg">
               <p className="text-sm font-black uppercase text-[#d9b13b]">
                 {String(index + 1).padStart(2, "0")}
               </p>
@@ -107,7 +107,7 @@ export default function Rules() {
         </p>
         <Link
           href="/contact"
-          className="mt-8 inline-flex border border-[#d9b13b] bg-[#d9b13b] px-6 py-3 text-sm font-bold uppercase text-[#18130c] hover:bg-transparent hover:text-[#d9b13b]"
+          className="mt-8 inline-flex rounded-lg border border-[#d9b13b] bg-[#d9b13b] px-6 py-3 text-sm font-bold uppercase text-[#18130c] shadow-lg hover:bg-transparent hover:text-[#d9b13b]"
         >
           Contact us
         </Link>

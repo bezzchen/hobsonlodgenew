@@ -57,7 +57,7 @@ export default function Location() {
       </section>
 
       <section className="px-5 pb-16 lg:px-8">
-        <div className="mx-auto overflow-hidden border border-[#18130c]/15 bg-white">
+        <div className="mx-auto overflow-hidden rounded-xl border border-[#18130c]/15 bg-white shadow-lg">
           <GoogleMapsEmbed
             apiKey={googleMapsApiKey}
             height={520}
@@ -77,7 +77,7 @@ export default function Location() {
         </div>
         <div className="mx-auto grid max-w-7xl gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {locationNotes.map((note) => (
-            <article key={note.title} className="border border-[#d9b13b]/50 bg-white p-7">
+            <article key={note.title} className="rounded-xl border border-[#d9b13b]/50 bg-white p-7 shadow-lg">
               <h3 className="text-2xl font-black uppercase">{note.title}</h3>
               <p className="mt-4 text-lg font-semibold text-[#3a3024]">{note.copy}</p>
             </article>
@@ -105,7 +105,7 @@ export default function Location() {
           </p>
           <Link
             href="/contact"
-            className="mt-8 inline-flex w-fit border border-[#d9b13b] bg-[#d9b13b] px-6 py-3 text-sm font-bold uppercase text-[#18130c] hover:bg-transparent hover:text-[#d9b13b]"
+            className="mt-8 inline-flex w-fit rounded-lg border border-[#d9b13b] bg-[#d9b13b] px-6 py-3 text-sm font-bold uppercase text-[#18130c] shadow-lg hover:bg-transparent hover:text-[#d9b13b]"
           >
             Contact reception
           </Link>

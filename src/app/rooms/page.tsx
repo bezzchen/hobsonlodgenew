@@ -108,7 +108,7 @@ export default function Rooms() {
           {roomOptions.map((room, index) => (
             <article
               key={room.title}
-              className="grid overflow-hidden border border-[#18130c]/15 bg-white lg:grid-cols-2"
+              className="grid overflow-hidden rounded-xl border border-[#18130c]/15 bg-white shadow-lg lg:grid-cols-2"
             >
               <div className={`relative min-h-[320px] ${index % 2 === 1 ? "lg:order-2" : ""}`}>
                 <Image
@@ -127,7 +127,7 @@ export default function Rooms() {
                 <p className="mt-5 text-lg leading-8 text-[#3a3024]">{room.summary}</p>
                 <ul className="mt-8 grid gap-4 sm:grid-cols-2">
                   {room.details.map((detail) => (
-                    <li key={detail} className="border-t border-[#d9b13b]/60 pt-3 font-semibold">
+                    <li key={detail} className="rounded-lg border border-[#d9b13b]/60 p-3 font-semibold shadow-sm">
                       {detail}
                     </li>
                   ))}
@@ -148,7 +148,7 @@ export default function Rooms() {
           </div>
           <div className="grid gap-4 sm:grid-cols-2">
             {amenities.map((item) => (
-              <p key={item} className="border border-white/20 p-5 font-semibold">
+              <p key={item} className="rounded-xl border border-white/20 p-5 font-semibold shadow-lg">
                 {item}
               </p>
             ))}
@@ -166,13 +166,13 @@ export default function Rooms() {
         <div className="mt-8 flex flex-wrap justify-center gap-4">
           <Link
             href="https://hotels.cloudbeds.com/en/reservation/CAZrqh"
-            className="border border-[#18130c] bg-[#18130c] px-6 py-3 text-sm font-bold uppercase text-white hover:bg-[#d9b13b] hover:text-[#18130c]"
+            className="rounded-lg border border-[#18130c] bg-[#18130c] px-6 py-3 text-sm font-bold uppercase text-white shadow-lg hover:bg-[#d9b13b] hover:text-[#18130c]"
           >
             Book now
           </Link>
           <Link
             href="/contact"
-            className="border border-[#18130c] px-6 py-3 text-sm font-bold uppercase hover:bg-white"
+            className="rounded-lg border border-[#18130c] px-6 py-3 text-sm font-bold uppercase shadow-md hover:bg-white"
           >
             Enquire now
           </Link>

@@ -53,7 +53,7 @@ export default function Contact() {
 
           <div className="mt-10 grid gap-4 sm:grid-cols-2">
             {contactDetails.map((detail) => (
-              <div key={detail.label} className="border-t border-[#d9b13b] pt-4">
+              <div key={detail.label} className="rounded-xl border border-[#d9b13b]/60 bg-white/60 p-4 shadow-md">
                 <p className="text-sm font-black uppercase text-[#4f6f57]">{detail.label}</p>
                 {detail.href ? (
                   <a href={detail.href} className="mt-2 block font-semibold hover:text-[#8c6a0c]">

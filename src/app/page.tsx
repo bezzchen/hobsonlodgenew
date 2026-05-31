@@ -63,7 +63,7 @@ export default function Home() {
 
         <div className="relative mx-auto flex min-h-[calc(100vh-6rem)] max-w-7xl flex-col justify-end px-5 pb-10 text-white lg:px-8">
           <div className="max-w-5xl">
-            <p className="mb-5 inline-flex bg-[#d9b13b] px-4 py-2 text-xs font-black uppercase text-[#18130c]">
+            <p className="mb-5 inline-flex rounded-lg bg-[#d9b13b] px-4 py-2 text-xs font-black uppercase text-[#18130c] shadow-lg">
               Auckland CBD hostel
             </p>
             <h1 className="text-6xl font-black uppercase leading-none sm:text-7xl lg:text-8xl">
@@ -74,7 +74,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="mt-10 grid gap-3 border-y border-white/40 py-5 text-sm font-semibold uppercase text-[#f8f3e8] sm:grid-cols-3">
+          <div className="mt-10 grid gap-3 rounded-xl border border-white/40 bg-white/10 p-5 text-sm font-semibold uppercase text-[#f8f3e8] shadow-lg sm:grid-cols-3">
             <p>8 minutes to Sky Tower</p>
             <p>6 minutes to InterCity Bus Terminal</p>
             <p>Good for nights, weeks, work and study</p>
@@ -89,7 +89,7 @@ export default function Home() {
           </p>
           <Link
             href="https://hotels.cloudbeds.com/en/reservation/CAZrqh"
-            className="border border-[#d9b13b] px-5 py-3 text-sm font-bold uppercase text-[#d9b13b] hover:bg-[#d9b13b] hover:text-[#18130c]"
+            className="rounded-lg border border-[#d9b13b] px-5 py-3 text-sm font-bold uppercase text-[#d9b13b] shadow-lg hover:bg-[#d9b13b] hover:text-[#18130c]"
           >
             Book now
           </Link>
@@ -118,7 +118,7 @@ export default function Home() {
       <section className="bg-white px-5 py-20 lg:px-8">
         <div className="mx-auto grid max-w-7xl gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {features.map((feature) => (
-            <div key={feature} className="border border-[#d9b13b]/40 bg-[#f8f3e8] p-6">
+            <div key={feature} className="rounded-xl border border-[#d9b13b]/40 bg-[#f8f3e8] p-6 shadow-lg">
               <p className="text-lg font-bold">{feature}</p>
             </div>
           ))}
@@ -141,7 +141,7 @@ export default function Home() {
 
           <div className="grid gap-6 md:grid-cols-3">
             {rooms.map((room) => (
-              <article key={room.title} className="overflow-hidden border border-[#18130c]/15 bg-white">
+              <article key={room.title} className="overflow-hidden rounded-xl border border-[#18130c]/15 bg-white shadow-lg">
                 <div className="relative aspect-[4/3]">
                   <Image
                     src={room.image}
@@ -164,7 +164,7 @@ export default function Home() {
       <section className="bg-[#4f6f57] px-5 py-16 text-white lg:px-8">
         <div className="mx-auto grid max-w-7xl gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {stats.map(([value, label]) => (
-            <div key={label} className="border-t border-white/40 pt-5">
+            <div key={label} className="rounded-xl border border-white/30 bg-white/10 p-5 shadow-lg">
               <p className="text-5xl font-black uppercase leading-none">{value}</p>
               <p className="mt-2 text-sm font-bold uppercase">{label}</p>
             </div>
@@ -185,7 +185,7 @@ export default function Home() {
               <a
                 key={label}
                 href={href}
-                className="border border-[#18130c]/15 bg-[#f8f3e8] p-5 font-bold hover:border-[#d9b13b] hover:text-[#8c6a0c]"
+                className="rounded-xl border border-[#18130c]/15 bg-[#f8f3e8] p-5 font-bold shadow-md hover:border-[#d9b13b] hover:text-[#8c6a0c]"
                 rel="noreferrer"
                 target="_blank"
               >
@@ -207,7 +207,7 @@ export default function Home() {
               Find us at 224 Hobson Street in Auckland CBD, close to Queen Street, Sky Tower, InterCity Bus Terminal and public transport.
             </p>
           </div>
-          <div className="overflow-hidden border border-[#18130c]/15 bg-white">
+          <div className="overflow-hidden rounded-xl border border-[#18130c]/15 bg-white shadow-lg">
             <GoogleMapsEmbed
               apiKey={googleMapsApiKey}
               height={450}

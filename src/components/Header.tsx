@@ -91,7 +91,7 @@ export default function Header() {
           ))}
           <Link
             href="https://hotels.cloudbeds.com/en/reservation/CAZrqh"
-            className={`border px-4 py-2 transition-colors duration-500 hover:border-[#969696] hover:bg-[#969696] hover:text-white ${bookClassName}`}
+            className={`rounded-lg border px-4 py-2 shadow-md transition-colors duration-500 hover:border-[#969696] hover:bg-[#969696] hover:text-white ${bookClassName}`}
           >
             Book
           </Link>

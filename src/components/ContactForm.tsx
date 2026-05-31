@@ -50,7 +50,7 @@ export default function ContactForm() {
   }
 
   const inputClassName =
-    "w-full border border-[#18130c]/20 bg-[#f8f3e8] p-4 text-[#18130c] placeholder-[#6f6254] focus:outline-none focus:ring-2 focus:ring-[#d9b13b]";
+    "w-full rounded-xl border border-[#18130c]/20 bg-[#f8f3e8] p-4 text-[#18130c] shadow-md placeholder-[#6f6254] focus:outline-none focus:ring-2 focus:ring-[#d9b13b]";
 
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-4 text-left">
@@ -144,7 +144,7 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={status === "loading"}
-        className="w-full border border-[#18130c] bg-[#18130c] py-4 font-bold uppercase text-white hover:bg-[#d9b13b] hover:text-[#18130c] disabled:cursor-not-allowed disabled:opacity-60"
+        className="w-full rounded-xl border border-[#18130c] bg-[#18130c] py-4 font-bold uppercase text-white shadow-lg hover:bg-[#d9b13b] hover:text-[#18130c] disabled:cursor-not-allowed disabled:opacity-60"
       >
         {status === "loading" ? "Sending..." : "Send message"}
       </button>
