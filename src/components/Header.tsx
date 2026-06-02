@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
+import BookButton from "./BookButton";
 
 const navItems = [
   { href: "/", label: "Hobson Lodge", mobileHidden: true },
@@ -89,12 +90,11 @@ export default function Header() {
               {item.label}
             </Link>
           ))}
-          <Link
-            href="https://hotels.cloudbeds.com/en/reservation/CAZrqh"
+          <BookButton
             className={`rounded-lg border px-4 py-2 shadow-md transition-colors duration-500 hover:border-[#969696] hover:bg-[#969696] hover:text-white ${bookClassName}`}
           >
             Book
-          </Link>
+          </BookButton>
         </nav>
       </div>
     </header>

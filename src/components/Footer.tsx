@@ -1,4 +1,4 @@
-import Link from "next/link";
+import BookButton from "./BookButton";
 
 export default function Footer() {
     return (
@@ -9,12 +9,11 @@ export default function Footer() {
                     <h2 className="mt-3 max-w-md text-4xl font-black uppercase leading-none md:text-5xl">
                         Your central Auckland base.
                     </h2>
-                    <Link
-                        href="https://hotels.cloudbeds.com/en/reservation/CAZrqh"
+                    <BookButton
                         className="mt-6 inline-flex rounded-lg border border-[#d9b13b] bg-[#d9b13b] px-5 py-3 text-sm font-bold uppercase text-[#18130c] shadow-lg hover:bg-transparent hover:text-[#d9b13b]"
                     >
                         Book direct
-                    </Link>
+                    </BookButton>
                 </div>
 
                 <div className="space-y-4 text-sm leading-6">

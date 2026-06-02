@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import BookButton from "../../components/BookButton";
 
 const roomOptions = [
   {
@@ -164,12 +165,11 @@ export default function Rooms() {
           Ask about room availability, parking pre-booking or the best room type for your stay.
         </p>
         <div className="mt-8 flex flex-wrap justify-center gap-4">
-          <Link
-            href="https://hotels.cloudbeds.com/en/reservation/CAZrqh"
+          <BookButton
             className="rounded-lg border border-[#18130c] bg-[#18130c] px-6 py-3 text-sm font-bold uppercase text-white shadow-lg hover:bg-[#d9b13b] hover:text-[#18130c]"
           >
             Book now
-          </Link>
+          </BookButton>
           <Link
             href="/contact"
             className="rounded-lg border border-[#18130c] px-6 py-3 text-sm font-bold uppercase shadow-md hover:bg-white"

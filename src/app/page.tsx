@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { GoogleMapsEmbed } from "@next/third-parties/google";
+import BookButton from "../components/BookButton";
 
 const features = [
   "Newly refurbished bedrooms",
@@ -87,12 +88,11 @@ export default function Home() {
           <p className="text-sm font-bold uppercase text-[#d9b13b]">
             Comfortable rooms, free WiFi, modern kitchen and central CBD access.
           </p>
-          <Link
-            href="https://hotels.cloudbeds.com/en/reservation/CAZrqh"
+          <BookButton
             className="rounded-lg border border-[#d9b13b] px-5 py-3 text-sm font-bold uppercase text-[#d9b13b] shadow-lg hover:bg-[#d9b13b] hover:text-[#18130c]"
           >
             Book now
-          </Link>
+          </BookButton>
         </div>
       </section>
 
