@@ -1,12 +1,15 @@
 import Image from "next/image";
 import Link from "next/link";
 import BookButton from "../../components/BookButton";
+import SiteIcon, { type SiteIconName } from "../../components/SiteIcon";
 
 const roomOptions = [
   {
     title: "Bed in 8 Bed Mixed Dormitory Room",
     image: "/images/bedin8_1.jpg",
     summary: "Shared bathroom, shared toilet, ventilation system and free WiFi.",
+    icon: "bed",
+    badge: "8",
     details: [
       "220-240 volt circuits",
       "Cable television",
@@ -22,6 +25,8 @@ const roomOptions = [
     title: "Bed in 6 Bed Mixed Dormitory Room",
     image: "/images/bedin6m_1.jpg",
     summary: "Shared bathroom, shared toilet, ventilation system and free WiFi.",
+    icon: "bed",
+    badge: "6",
     details: [
       "220-240 volt circuits",
       "Ceiling fan",
@@ -35,6 +40,8 @@ const roomOptions = [
     title: "Bed in 6 Bed Female Dormitory Room",
     image: "/images/bedin6f_1.jpg",
     summary: "Female dormitory accommodation with shared bathroom, shared toilet, ventilation and free WiFi.",
+    icon: "people",
+    badge: "6F",
     details: [
       "220-240 volt circuits",
       "Ceiling fan",
@@ -48,6 +55,8 @@ const roomOptions = [
     title: "Double Room with Shared Bathroom",
     image: "/images/dbs_1.jpg",
     summary: "A private double room with shared bathroom access and free WiFi.",
+    icon: "room",
+    badge: "2",
     details: [
       "220-240 volt circuits",
       "Ceiling fan",
@@ -59,6 +68,8 @@ const roomOptions = [
     title: "Double Room with Ensuite",
     image: "/images/dbe_1.jpg",
     summary: "A private double room with ensuite bathroom, microwave and free WiFi.",
+    icon: "key",
+    badge: "2",
     details: [
       "Private bathroom",
       "220-240 volt circuits",
@@ -68,24 +79,52 @@ const roomOptions = [
       "Wireless internet",
     ],
   },
-];
+] satisfies {
+  badge: string;
+  details: string[];
+  icon: SiteIconName;
+  image: string;
+  summary: string;
+  title: string;
+}[];
 
 const amenities = [
-  "Room services",
-  "Heaters in all rooms",
-  "Onsite parking ($15 NZD/day)",
-  "Fully supplied bed linen",
-  "Individual under bed lockers",
-  "Individual storage cabinets",
-  "Ventilation system in all rooms",
-  "Laundry facilities",
-  "Fans in all rooms",
-  "Free WiFi access in all areas",
-  "Internet cafe",
-  "Superior bathrooms",
-  "Modern kitchen",
-  "Hotel grade mattresses",
-];
+  { label: "Room services", icon: "room" },
+  { label: "Heaters in all rooms", icon: "sparkle" },
+  { label: "Onsite parking ($15 NZD/day)", icon: "parking" },
+  { label: "Fully supplied bed linen", icon: "bed" },
+  { label: "Individual under bed lockers", icon: "locker" },
+  { label: "Individual storage cabinets", icon: "locker" },
+  { label: "Ventilation system in all rooms", icon: "wind" },
+  { label: "Laundry facilities", icon: "laundry" },
+  { label: "Fans in all rooms", icon: "fan" },
+  { label: "Free WiFi access in all areas", icon: "wifi" },
+  { label: "Internet cafe", icon: "wifi" },
+  { label: "Superior bathrooms", icon: "sparkle" },
+  { label: "Modern kitchen", icon: "utensils" },
+  { label: "Hotel grade mattresses", icon: "mattress" },
+] satisfies { icon: SiteIconName; label: string }[];
+
+const detailIconMap = new Map<string, SiteIconName>([
+  ["220-240 volt circuits", "sparkle"],
+  ["Cable television", "tv"],
+  ["Ceiling fan", "fan"],
+  ["Hairdryer", "wind"],
+  ["Microwave", "kitchen"],
+  ["Wireless internet", "wifi"],
+  ["Individual under bed locker", "locker"],
+  ["Individual storage cabinet", "locker"],
+  ["Private bathroom", "key"],
+]);
+
+const iconBoxClassName =
+  "flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#d9b13b] text-[#18130c] shadow-md";
+
+const smallIconBoxClassName =
+  "flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[#f8f3e8] text-[#4f6f57] shadow-sm";
+
+const darkIconBoxClassName =
+  "flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-white/10 text-[#d9b13b] shadow-md";
 
 export default function Rooms() {
   return (
@@ -127,12 +166,21 @@ export default function Rooms() {
                 <p className="text-sm font-black uppercase text-[#4f6f57]">
                   Limited onsite parking available by pre-booking; charges apply.
                 </p>
+                <div className={`${iconBoxClassName} mt-5`}>
+                  <SiteIcon badge={room.badge} name={room.icon} />
+                </div>
                 <h2 className="mt-3 text-3xl font-black uppercase leading-none sm:text-4xl">{room.title}</h2>
                 <p className="mt-4 text-base leading-7 text-[#3a3024] sm:mt-5 sm:text-lg sm:leading-8">{room.summary}</p>
                 <ul className="mt-6 grid gap-3 sm:mt-8 sm:grid-cols-2 sm:gap-4">
                   {room.details.map((detail) => (
-                    <li key={detail} className="rounded-lg border border-[#d9b13b]/60 p-3 text-sm font-semibold shadow-sm sm:text-base">
-                      {detail}
+                    <li key={detail} className="flex items-center gap-3 rounded-lg border border-[#d9b13b]/60 p-3 text-sm font-semibold shadow-sm sm:text-base">
+                      <span className={smallIconBoxClassName}>
+                        <SiteIcon
+                          className="h-5 w-5"
+                          name={detailIconMap.get(detail) ?? "sparkle"}
+                        />
+                      </span>
+                      <span>{detail}</span>
                     </li>
                   ))}
                 </ul>
@@ -152,15 +200,18 @@ export default function Rooms() {
           </div>
           <div className="grid gap-4 sm:grid-cols-2">
             {amenities.map((item, index) => (
-              <p
-                key={item}
+              <div
+                key={item.label}
                 data-reveal
-                className={`rounded-xl border border-white/20 p-5 font-semibold shadow-lg ${
+                className={`flex items-center gap-4 rounded-xl border border-white/20 p-5 font-semibold shadow-lg ${
                   index % 2 === 1 ? "reveal-delay-1" : ""
                 }`}
               >
-                {item}
-              </p>
+                <span className={darkIconBoxClassName}>
+                  <SiteIcon className="h-5 w-5" name={item.icon} />
+                </span>
+                <span>{item.label}</span>
+              </div>
             ))}
           </div>
         </div>

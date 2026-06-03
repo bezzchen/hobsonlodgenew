@@ -2,49 +2,77 @@ import Image from "next/image";
 import Link from "next/link";
 import { GoogleMapsEmbed } from "@next/third-parties/google";
 import BookButton from "../components/BookButton";
+import SiteIcon, { type SiteIconName } from "../components/SiteIcon";
 
 const features = [
-  "Newly refurbished bedrooms",
-  "Hotel grade mattresses",
-  "Fresh air ventilation in all rooms",
-  "Free WiFi access in all areas",
-  "Spacious living room and kitchen",
-  "Onsite parking by pre-booking",
-];
+  { label: "Newly refurbished bedrooms", icon: "sparkle" },
+  { label: "Hotel grade mattresses", icon: "mattress" },
+  { label: "Fresh air ventilation in all rooms", icon: "wind" },
+  { label: "Free WiFi access in all areas", icon: "wifi" },
+  { label: "Spacious living room and kitchen", icon: "utensils" },
+  { label: "Onsite parking by pre-booking", icon: "parking" },
+] satisfies { icon: SiteIconName; label: string }[];
 
-const rooms = [
+const heroFacts = [
+  { label: "8 minutes to Sky Tower", icon: "tower" },
+  { label: "6 minutes to InterCity Bus Terminal", icon: "bus" },
+  { label: "Good for nights, weeks, work and study", icon: "calendar" },
+] satisfies { icon: SiteIconName; label: string }[];
+
+const stats = [
+  { value: "8 min", label: "walk to Sky Tower", icon: "tower" },
+  { value: "6 min", label: "walk to InterCity Bus Terminal", icon: "bus" },
+  { value: "$15", label: "NZD per day onsite parking", icon: "parking" },
+  { value: "9:30am", label: "daily reception opens", icon: "clock" },
+] satisfies { icon: SiteIconName; label: string; value: string }[];
+
+const usefulLinks = [
+  { label: "Eventfinda New Zealand", href: "https://www.eventfinda.co.nz/", icon: "calendar" },
+  { label: "Auckland Public Transport", href: "https://at.govt.nz/", icon: "at" },
+  { label: "Auckland Museum", href: "https://www.aucklandmuseum.com/", icon: "museum" },
+  { label: "Auckland Art Gallery", href: "https://www.aucklandartgallery.com/", icon: "art" },
+  { label: "Conservation Campsites", href: "https://www.doc.govt.nz/", icon: "tent" },
+  { label: "Auckland Tourism and Events", href: "https://www.aucklandnz.com/", icon: "compass" },
+] satisfies { href: string; icon: SiteIconName; label: string }[];
+
+const roomSummaries = [
   {
     title: "Mixed Dorm Beds",
     image: "/images/bedin8_1.jpg",
     copy: "Choose 8-bed or 6-bed mixed dormitory rooms with shared bathroom access, ventilation, free WiFi, lockers and storage cabinets.",
+    icon: "bed",
+    badge: "8",
   },
   {
     title: "Female Dorm Beds",
     image: "/images/bedin6f_1.jpg",
     copy: "A 6-bed female dormitory option with shared bathroom access, ventilation, free WiFi, ceiling fans and individual storage.",
+    icon: "people",
+    badge: "6F",
   },
   {
     title: "Double Rooms",
     image: "/images/dbe_1.jpg",
     copy: "Private double room options are available with either a shared bathroom or ensuite, plus free WiFi and useful in-room amenities.",
+    icon: "room",
+    badge: "2",
   },
-];
+] satisfies {
+  badge: string;
+  copy: string;
+  icon: SiteIconName;
+  image: string;
+  title: string;
+}[];
 
-const stats = [
-  ["8 min", "walk to Sky Tower"],
-  ["6 min", "walk to InterCity Bus Terminal"],
-  ["$15", "NZD per day onsite parking"],
-  ["9:30am", "daily reception opens"],
-];
+const iconBoxClassName =
+  "flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#d9b13b] text-[#18130c] shadow-md";
 
-const usefulLinks = [
-  ["Eventfinda New Zealand", "https://www.eventfinda.co.nz/"],
-  ["Auckland Public Transport", "https://at.govt.nz/"],
-  ["Auckland Museum", "https://www.aucklandmuseum.com/"],
-  ["Auckland Art Gallery", "https://www.aucklandartgallery.com/"],
-  ["Conservation Campsites", "https://www.doc.govt.nz/"],
-  ["Auckland Tourism and Events", "https://www.aucklandnz.com/"],
-];
+const darkIconBoxClassName =
+  "flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-white/15 text-[#d9b13b] shadow-md";
+
+const linkIconBoxClassName =
+  "flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#18130c] text-[#d9b13b] shadow-md";
 
 const googleMapsApiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY ?? "";
 
@@ -67,7 +95,7 @@ export default function Home() {
             <p data-reveal className="mb-5 inline-flex rounded-lg bg-[#d9b13b] px-4 py-2 text-xs font-black uppercase text-[#18130c] shadow-lg">
               Auckland CBD hostel
             </p>
-            <h1 data-reveal className="reveal-delay-1 text-5xl font-black uppercase leading-none sm:text-7xl lg:text-8xl">
+            <h1 data-reveal className="reveal-delay-1 text-4xl font-black uppercase leading-none min-[420px]:text-5xl sm:text-7xl lg:text-8xl">
               Hobson Lodge
             </h1>
             <p data-reveal className="reveal-delay-2 mt-5 max-w-2xl text-base leading-7 text-[#f8f3e8] sm:mt-6 sm:text-xl sm:leading-8">
@@ -76,9 +104,14 @@ export default function Home() {
           </div>
 
           <div data-reveal className="reveal-delay-3 mt-8 grid gap-3 rounded-xl border border-white/40 bg-white/10 p-4 text-xs font-semibold uppercase text-[#f8f3e8] shadow-lg sm:mt-10 sm:grid-cols-3 sm:p-5 sm:text-sm">
-            <p>8 minutes to Sky Tower</p>
-            <p>6 minutes to InterCity Bus Terminal</p>
-            <p>Good for nights, weeks, work and study</p>
+            {heroFacts.map((fact) => (
+              <p key={fact.label} className="flex items-center gap-3">
+                <span className={darkIconBoxClassName}>
+                  <SiteIcon name={fact.icon} />
+                </span>
+                <span>{fact.label}</span>
+              </p>
+            ))}
           </div>
         </div>
       </section>
@@ -119,13 +152,16 @@ export default function Home() {
         <div className="mx-auto grid max-w-7xl gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {features.map((feature, index) => (
             <div
-              key={feature}
+              key={feature.label}
               data-reveal
               className={`rounded-xl border border-[#d9b13b]/40 bg-[#f8f3e8] p-6 shadow-lg ${
                 index % 3 === 1 ? "reveal-delay-1" : index % 3 === 2 ? "reveal-delay-2" : ""
               }`}
             >
-              <p className="text-lg font-bold">{feature}</p>
+              <div className={iconBoxClassName}>
+                <SiteIcon name={feature.icon} />
+              </div>
+              <p className="mt-5 text-lg font-bold">{feature.label}</p>
             </div>
           ))}
         </div>
@@ -146,7 +182,7 @@ export default function Home() {
           </div>
 
           <div className="grid gap-6 md:grid-cols-3">
-            {rooms.map((room, index) => (
+            {roomSummaries.map((room, index) => (
               <article
                 key={room.title}
                 data-reveal
@@ -164,7 +200,10 @@ export default function Home() {
                   />
                 </div>
                 <div className="p-6">
-                  <h3 className="text-xl font-black uppercase sm:text-2xl">{room.title}</h3>
+                  <div className={iconBoxClassName}>
+                    <SiteIcon badge={room.badge} name={room.icon} />
+                  </div>
+                  <h3 className="mt-5 text-xl font-black uppercase sm:text-2xl">{room.title}</h3>
                   <p className="mt-3 text-sm leading-6 text-[#3a3024] sm:text-base sm:leading-7">{room.copy}</p>
                 </div>
               </article>
@@ -175,16 +214,19 @@ export default function Home() {
 
       <section className="bg-[#4f6f57] px-5 py-12 text-white sm:py-16 lg:px-8">
         <div className="mx-auto grid max-w-7xl gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {stats.map(([value, label], index) => (
+          {stats.map((stat, index) => (
             <div
-              key={label}
+              key={stat.label}
               data-reveal
               className={`rounded-xl border border-white/30 bg-white/10 p-5 shadow-lg ${
                 index === 1 ? "reveal-delay-1" : index === 2 ? "reveal-delay-2" : index === 3 ? "reveal-delay-3" : ""
               }`}
             >
-              <p className="text-4xl font-black uppercase leading-none sm:text-5xl">{value}</p>
-              <p className="mt-2 text-sm font-bold uppercase">{label}</p>
+              <div className={darkIconBoxClassName}>
+                <SiteIcon name={stat.icon} />
+              </div>
+              <p className="mt-5 text-4xl font-black uppercase leading-none sm:text-5xl">{stat.value}</p>
+              <p className="mt-2 text-sm font-bold uppercase">{stat.label}</p>
             </div>
           ))}
         </div>
@@ -199,18 +241,21 @@ export default function Home() {
             </h2>
           </div>
           <div className="grid gap-4 sm:grid-cols-2">
-            {usefulLinks.map(([label, href], index) => (
+            {usefulLinks.map((link, index) => (
               <a
-                key={label}
+                key={link.label}
                 data-reveal
-                href={href}
-                className={`rounded-xl border border-[#18130c]/15 bg-[#f8f3e8] p-5 font-bold shadow-md hover:border-[#d9b13b] hover:text-[#8c6a0c] ${
+                href={link.href}
+                className={`flex items-center gap-4 rounded-xl border border-[#18130c]/15 bg-[#f8f3e8] p-5 font-bold shadow-md hover:border-[#d9b13b] hover:text-[#8c6a0c] ${
                   index % 2 === 1 ? "reveal-delay-1" : ""
                 }`}
                 rel="noreferrer"
                 target="_blank"
               >
-                {label}
+                <span className={linkIconBoxClassName}>
+                  <SiteIcon name={link.icon} />
+                </span>
+                <span>{link.label}</span>
               </a>
             ))}
           </div>

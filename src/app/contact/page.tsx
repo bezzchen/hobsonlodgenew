@@ -1,30 +1,44 @@
 import Image from "next/image";
 import ContactForm from "../../components/ContactForm";
+import SiteIcon, { type SiteIconName } from "../../components/SiteIcon";
 
 const contactDetails = [
   {
     label: "Address",
     value: "224 Hobson Street, Auckland CBD, Auckland 1010, New Zealand",
+    icon: "mapPin",
   },
   {
     label: "Phone",
     value: "09 972 9019",
     href: "tel:+6499729019",
+    icon: "phone",
   },
   {
     label: "Email",
     value: "info@hobsonlodge.co.nz",
     href: "mailto:info@hobsonlodge.co.nz",
+    icon: "mail",
   },
   {
     label: "Reception",
     value: "Monday to Sunday, 9:30am - 5pm. Check-in is 2pm - 5pm.",
+    icon: "clock",
   },
   {
     label: "After-hours",
     value: "Please contact Hobson Lodge directly for after-hours arrival information.",
+    icon: "key",
   },
-];
+] satisfies {
+  href?: string;
+  icon: SiteIconName;
+  label: string;
+  value: string;
+}[];
+
+const iconBoxClassName =
+  "flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#d9b13b] text-[#18130c] shadow-md";
 
 export default function Contact() {
   return (
@@ -60,7 +74,10 @@ export default function Contact() {
                   index % 2 === 1 ? "reveal-delay-1" : ""
                 }`}
               >
-                <p className="text-sm font-black uppercase text-[#4f6f57]">{detail.label}</p>
+                <div className={iconBoxClassName}>
+                  <SiteIcon name={detail.icon} />
+                </div>
+                <p className="mt-4 text-sm font-black uppercase text-[#4f6f57]">{detail.label}</p>
                 {detail.href ? (
                   <a href={detail.href} className="mt-2 block font-semibold hover:text-[#8c6a0c]">
                     {detail.value}

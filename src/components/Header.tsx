@@ -90,7 +90,7 @@ export default function Header() {
       className={`fixed top-0 z-50 w-full border-b transition-colors duration-500 ease-in-out ${headerClassName}`}
     >
       <div className="relative mx-auto flex max-w-7xl items-center justify-between gap-3 px-5 py-3 lg:px-8">
-        <Link href="/" className="relative h-9 w-44 shrink-0 sm:h-11 sm:w-56" aria-label="Hobson Lodge home">
+        <Link href="/" className="relative h-9 w-36 shrink-0 min-[380px]:w-40 lg:h-11 lg:w-56" aria-label="Hobson Lodge home">
           <Image
             src="/images/hobsonlodgelogogray.png"
             alt="Hobson Lodge"
@@ -113,7 +113,7 @@ export default function Header() {
           />
         </Link>
 
-        <nav className="hidden items-center justify-end gap-5 text-xs font-semibold uppercase sm:flex">
+        <nav className="hidden items-center justify-end gap-5 text-xs font-semibold uppercase lg:flex">
           {navItems.map((item) => (
             <Link
               key={item.href}
@@ -130,9 +130,9 @@ export default function Header() {
           </BookButton>
         </nav>
 
-        <div className="flex items-center gap-2 sm:hidden">
+        <div className="flex items-center gap-2 lg:hidden">
           <BookButton
-            className={`min-h-10 rounded-lg border px-4 text-sm font-bold shadow-md transition-colors duration-500 hover:border-[#969696] hover:bg-[#969696] hover:text-white ${bookClassName}`}
+            className={`min-h-10 rounded-lg border px-3 text-sm font-bold shadow-md transition-colors duration-500 hover:border-[#969696] hover:bg-[#969696] hover:text-white min-[380px]:px-4 ${bookClassName}`}
             onClose={() => setIsMenuOpen(false)}
           >
             Book
@@ -168,7 +168,7 @@ export default function Header() {
       {isMenuOpen ? (
         <div
           id="mobile-menu"
-          className={`absolute left-0 right-0 top-full border-b px-5 pb-5 pt-2 shadow-xl sm:hidden ${
+          className={`absolute left-0 right-0 top-full border-b px-5 pb-5 pt-2 shadow-xl lg:hidden ${
             isAtTop
               ? "border-white/10 bg-[#2b1d17] text-white"
               : "border-[#d9b13b]/30 bg-white text-[#18130c]"
