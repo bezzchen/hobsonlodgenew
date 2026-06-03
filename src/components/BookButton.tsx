@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 const bookingUrl = "https://hotels.cloudbeds.com/en/reservation/CAZrqh";
 const phoneHref = "tel:+6499729019";
@@ -9,10 +9,16 @@ const phoneLabel = "09 972 9019";
 type BookButtonProps = {
   children?: React.ReactNode;
   className?: string;
+  onClose?: () => void;
 };
 
-export default function BookButton({ children = "Book", className = "" }: BookButtonProps) {
+export default function BookButton({ children = "Book", className = "", onClose }: BookButtonProps) {
   const [isOpen, setIsOpen] = useState(false);
+
+  const closeDialog = useCallback(() => {
+    setIsOpen(false);
+    onClose?.();
+  }, [onClose]);
 
   useEffect(() => {
     if (!isOpen) {
@@ -24,7 +30,7 @@ export default function BookButton({ children = "Book", className = "" }: BookBu
 
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
-        setIsOpen(false);
+        closeDialog();
       }
     };
 
@@ -34,11 +40,15 @@ export default function BookButton({ children = "Book", className = "" }: BookBu
       document.body.style.overflow = previousOverflow;
       window.removeEventListener("keydown", handleKeyDown);
     };
-  }, [isOpen]);
+  }, [closeDialog, isOpen]);
 
   return (
     <>
-      <button type="button" className={className} onClick={() => setIsOpen(true)}>
+      <button
+        type="button"
+        className={className}
+        onClick={() => setIsOpen(true)}
+      >
         {children}
       </button>
 
@@ -47,7 +57,7 @@ export default function BookButton({ children = "Book", className = "" }: BookBu
           className="fixed inset-0 z-[100] flex items-center justify-center bg-[#18130c]/60 px-5"
           data-lenis-prevent
           role="presentation"
-          onMouseDown={() => setIsOpen(false)}
+          onMouseDown={closeDialog}
         >
           <div
             aria-modal="true"
@@ -58,7 +68,7 @@ export default function BookButton({ children = "Book", className = "" }: BookBu
             <button
               type="button"
               className="ml-auto flex rounded-full border border-[#18130c]/20 px-3 py-1 text-xs font-bold uppercase shadow-sm hover:bg-white"
-              onClick={() => setIsOpen(false)}
+              onClick={closeDialog}
             >
               Close
             </button>

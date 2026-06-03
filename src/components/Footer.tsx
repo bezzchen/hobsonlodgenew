@@ -2,11 +2,11 @@ import BookButton from "./BookButton";
 
 export default function Footer() {
     return (
-        <footer className="bg-[#18130c] px-5 py-12 text-[#f8f3e8]">
+        <footer className="bg-[#18130c] px-5 py-10 text-[#f8f3e8] sm:py-12">
             <div className="mx-auto grid max-w-7xl gap-10 md:grid-cols-[1.2fr_1fr_1fr]">
                 <div>
                     <p className="text-sm font-semibold uppercase text-[#d9b13b]">Hobson Lodge</p>
-                    <h2 className="mt-3 max-w-md text-4xl font-black uppercase leading-none md:text-5xl">
+                    <h2 className="mt-3 max-w-md text-3xl font-black uppercase leading-none sm:text-4xl md:text-5xl">
                         Your central Auckland base.
                     </h2>
                     <BookButton

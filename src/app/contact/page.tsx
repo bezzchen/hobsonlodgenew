@@ -28,9 +28,9 @@ const contactDetails = [
 
 export default function Contact() {
   return (
-    <main className="bg-[#f8f3e8] pt-28 text-[#18130c] sm:pt-24">
+    <main className="bg-[#f8f3e8] pt-20 text-[#18130c] sm:pt-24">
       <section className="grid lg:grid-cols-[0.9fr_1.1fr]">
-        <div data-reveal className="relative min-h-[420px] lg:min-h-[calc(100vh-6rem)]">
+        <div data-reveal className="relative min-h-[260px] sm:min-h-[420px] lg:min-h-[calc(100vh-6rem)]">
           <Image
             src="/images/2.jpg"
             alt="Hobson Lodge guest corridor"
@@ -42,12 +42,12 @@ export default function Contact() {
           <div className="absolute inset-0 bg-[#18130c]/20" />
         </div>
 
-        <div className="flex flex-col justify-center px-5 py-16 lg:px-16">
+        <div className="flex flex-col justify-center px-5 py-12 sm:py-16 lg:px-16">
           <p data-reveal className="text-sm font-black uppercase text-[#2f85a7]">Contact</p>
-          <h1 data-reveal className="reveal-delay-1 mt-4 text-6xl font-black uppercase leading-none md:text-7xl">
+          <h1 data-reveal className="reveal-delay-1 mt-4 text-4xl font-black uppercase leading-none sm:text-5xl md:text-7xl">
             Contact us.
           </h1>
-          <p data-reveal className="reveal-delay-2 mt-6 max-w-2xl text-lg leading-8 text-[#3a3024]">
+          <p data-reveal className="reveal-delay-2 mt-5 max-w-2xl text-base leading-7 text-[#3a3024] sm:mt-6 sm:text-lg sm:leading-8">
             Send an enquiry about room availability, arrival time, parking, longer stays or any questions before booking.
           </p>
 
@@ -74,11 +74,11 @@ export default function Contact() {
         </div>
       </section>
 
-      <section className="bg-white px-5 py-20 lg:px-8">
+      <section className="bg-white px-5 py-14 sm:py-20 lg:px-8">
         <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.8fr_1.2fr]">
           <div data-reveal>
             <p className="text-sm font-black uppercase text-[#4f6f57]">Send a message</p>
-            <h2 className="mt-4 text-5xl font-black uppercase leading-none">
+            <h2 className="mt-4 text-4xl font-black uppercase leading-none sm:text-5xl">
               Enquire now.
             </h2>
           </div>

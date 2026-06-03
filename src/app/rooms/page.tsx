@@ -89,22 +89,22 @@ const amenities = [
 
 export default function Rooms() {
   return (
-    <main className="bg-[#f8f3e8] pt-28 text-[#18130c] sm:pt-24">
-      <section className="px-5 py-16 lg:px-8">
+    <main className="bg-[#f8f3e8] pt-20 text-[#18130c] sm:pt-24">
+      <section className="px-5 py-12 sm:py-16 lg:px-8">
         <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
           <div data-reveal>
             <p className="text-sm font-black uppercase text-[#2f85a7]">Our rooms</p>
-            <h1 className="mt-4 text-6xl font-black uppercase leading-none md:text-7xl">
+            <h1 className="mt-4 text-4xl font-black uppercase leading-none sm:text-5xl md:text-7xl">
               Cozy and comfortable accommodation.
             </h1>
           </div>
-          <p data-reveal className="reveal-delay-1 text-lg leading-8 text-[#3a3024]">
+          <p data-reveal className="reveal-delay-1 text-base leading-7 text-[#3a3024] sm:text-lg sm:leading-8">
             Hobson Lodge offers mixed dormitory beds, a female dormitory option and double rooms with either shared bathroom access or a private ensuite.
           </p>
         </div>
       </section>
 
-      <section className="px-5 pb-20 lg:px-8">
+      <section className="px-5 pb-14 sm:pb-20 lg:px-8">
         <div className="mx-auto grid max-w-7xl gap-6">
           {roomOptions.map((room, index) => (
             <article
@@ -114,7 +114,7 @@ export default function Rooms() {
                 index % 2 === 1 ? "reveal-delay-1" : ""
               }`}
             >
-              <div className={`relative min-h-[320px] ${index % 2 === 1 ? "lg:order-2" : ""}`}>
+              <div className={`relative min-h-[220px] sm:min-h-[320px] ${index % 2 === 1 ? "lg:order-2" : ""}`}>
                 <Image
                   src={room.image}
                   alt={room.title}
@@ -123,15 +123,15 @@ export default function Rooms() {
                   className="object-cover"
                 />
               </div>
-              <div className="flex flex-col justify-center p-6 sm:p-10">
+              <div className="flex flex-col justify-center p-5 sm:p-10">
                 <p className="text-sm font-black uppercase text-[#4f6f57]">
                   Limited onsite parking available by pre-booking; charges apply.
                 </p>
-                <h2 className="mt-3 text-4xl font-black uppercase leading-none">{room.title}</h2>
-                <p className="mt-5 text-lg leading-8 text-[#3a3024]">{room.summary}</p>
-                <ul className="mt-8 grid gap-4 sm:grid-cols-2">
+                <h2 className="mt-3 text-3xl font-black uppercase leading-none sm:text-4xl">{room.title}</h2>
+                <p className="mt-4 text-base leading-7 text-[#3a3024] sm:mt-5 sm:text-lg sm:leading-8">{room.summary}</p>
+                <ul className="mt-6 grid gap-3 sm:mt-8 sm:grid-cols-2 sm:gap-4">
                   {room.details.map((detail) => (
-                    <li key={detail} className="rounded-lg border border-[#d9b13b]/60 p-3 font-semibold shadow-sm">
+                    <li key={detail} className="rounded-lg border border-[#d9b13b]/60 p-3 text-sm font-semibold shadow-sm sm:text-base">
                       {detail}
                     </li>
                   ))}
@@ -142,11 +142,11 @@ export default function Rooms() {
         </div>
       </section>
 
-      <section className="bg-[#18130c] px-5 py-16 text-[#f8f3e8] lg:px-8">
+      <section className="bg-[#18130c] px-5 py-12 text-[#f8f3e8] sm:py-16 lg:px-8">
         <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.8fr_1.2fr]">
           <div data-reveal>
             <p className="text-sm font-black uppercase text-[#d9b13b]">Amenities</p>
-            <h2 className="mt-4 text-5xl font-black uppercase leading-none">
+            <h2 className="mt-4 text-4xl font-black uppercase leading-none sm:text-5xl">
               Facilities across the hostel.
             </h2>
           </div>
@@ -166,11 +166,11 @@ export default function Rooms() {
         </div>
       </section>
 
-      <section className="px-5 py-20 text-center lg:px-8">
-        <h2 data-reveal className="mx-auto max-w-4xl text-5xl font-black uppercase leading-none md:text-6xl">
+      <section className="px-5 py-14 text-center sm:py-20 lg:px-8">
+        <h2 data-reveal className="mx-auto max-w-4xl text-4xl font-black uppercase leading-none sm:text-5xl md:text-6xl">
           Enquire now or book direct.
         </h2>
-        <p data-reveal className="reveal-delay-1 mx-auto mt-6 max-w-2xl text-lg leading-8 text-[#3a3024]">
+        <p data-reveal className="reveal-delay-1 mx-auto mt-5 max-w-2xl text-base leading-7 text-[#3a3024] sm:mt-6 sm:text-lg sm:leading-8">
           Ask about room availability, parking pre-booking or the best room type for your stay.
         </p>
         <div data-reveal className="reveal-delay-2 mt-8 flex flex-wrap justify-center gap-4">

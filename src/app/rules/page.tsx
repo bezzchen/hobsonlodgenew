@@ -69,22 +69,22 @@ const rules = [
 
 export default function Rules() {
   return (
-    <main className="bg-[#f8f3e8] pt-28 text-[#18130c] sm:pt-24">
-      <section className="px-5 py-16 lg:px-8">
+    <main className="bg-[#f8f3e8] pt-20 text-[#18130c] sm:pt-24">
+      <section className="px-5 py-12 sm:py-16 lg:px-8">
         <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
           <div data-reveal>
             <p className="text-sm font-black uppercase text-[#2f85a7]">Hostel rules</p>
-            <h1 className="mt-4 text-6xl font-black uppercase leading-none md:text-7xl">
+            <h1 className="mt-4 text-4xl font-black uppercase leading-none sm:text-5xl md:text-7xl">
               Rules for every stay.
             </h1>
           </div>
-          <p data-reveal className="reveal-delay-1 text-lg leading-8 text-[#3a3024]">
+          <p data-reveal className="reveal-delay-1 text-base leading-7 text-[#3a3024] sm:text-lg sm:leading-8">
             These policies help keep Hobson Lodge clean, secure and comfortable for everyone staying with us.
           </p>
         </div>
       </section>
 
-      <section className="px-5 pb-20 lg:px-8">
+      <section className="px-5 pb-14 sm:pb-20 lg:px-8">
         <div className="mx-auto grid max-w-7xl gap-4 md:grid-cols-2">
           {rules.map((rule, index) => (
             <article
@@ -97,18 +97,18 @@ export default function Rules() {
               <p className="text-sm font-black uppercase text-[#d9b13b]">
                 {String(index + 1).padStart(2, "0")}
               </p>
-              <h2 className="mt-2 text-2xl font-black uppercase">{rule.title}</h2>
-              <p className="mt-3 leading-7 text-[#3a3024]">{rule.copy}</p>
+              <h2 className="mt-2 text-xl font-black uppercase sm:text-2xl">{rule.title}</h2>
+              <p className="mt-3 text-sm leading-6 text-[#3a3024] sm:text-base sm:leading-7">{rule.copy}</p>
             </article>
           ))}
         </div>
       </section>
 
-      <section className="bg-[#18130c] px-5 py-16 text-center text-[#f8f3e8] lg:px-8">
-        <h2 data-reveal className="mx-auto max-w-4xl text-5xl font-black uppercase leading-none">
+      <section className="bg-[#18130c] px-5 py-12 text-center text-[#f8f3e8] sm:py-16 lg:px-8">
+        <h2 data-reveal className="mx-auto max-w-4xl text-4xl font-black uppercase leading-none sm:text-5xl">
           Questions about arrival or policies?
         </h2>
-        <p data-reveal className="reveal-delay-1 mx-auto mt-6 max-w-2xl text-lg leading-8">
+        <p data-reveal className="reveal-delay-1 mx-auto mt-5 max-w-2xl text-base leading-7 sm:mt-6 sm:text-lg sm:leading-8">
           Contact reception before your stay and we will help you plan the smoothest arrival.
         </p>
         <Link
