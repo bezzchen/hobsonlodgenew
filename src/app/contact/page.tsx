@@ -30,7 +30,7 @@ export default function Contact() {
   return (
     <main className="bg-[#f8f3e8] pt-28 text-[#18130c] sm:pt-24">
       <section className="grid lg:grid-cols-[0.9fr_1.1fr]">
-        <div className="relative min-h-[420px] lg:min-h-[calc(100vh-6rem)]">
+        <div data-reveal className="relative min-h-[420px] lg:min-h-[calc(100vh-6rem)]">
           <Image
             src="/images/2.jpg"
             alt="Hobson Lodge guest corridor"
@@ -43,17 +43,23 @@ export default function Contact() {
         </div>
 
         <div className="flex flex-col justify-center px-5 py-16 lg:px-16">
-          <p className="text-sm font-black uppercase text-[#2f85a7]">Contact</p>
-          <h1 className="mt-4 text-6xl font-black uppercase leading-none md:text-7xl">
+          <p data-reveal className="text-sm font-black uppercase text-[#2f85a7]">Contact</p>
+          <h1 data-reveal className="reveal-delay-1 mt-4 text-6xl font-black uppercase leading-none md:text-7xl">
             Contact us.
           </h1>
-          <p className="mt-6 max-w-2xl text-lg leading-8 text-[#3a3024]">
+          <p data-reveal className="reveal-delay-2 mt-6 max-w-2xl text-lg leading-8 text-[#3a3024]">
             Send an enquiry about room availability, arrival time, parking, longer stays or any questions before booking.
           </p>
 
           <div className="mt-10 grid gap-4 sm:grid-cols-2">
-            {contactDetails.map((detail) => (
-              <div key={detail.label} className="rounded-xl border border-[#d9b13b]/60 bg-white/60 p-4 shadow-md">
+            {contactDetails.map((detail, index) => (
+              <div
+                key={detail.label}
+                data-reveal
+                className={`rounded-xl border border-[#d9b13b]/60 bg-white/60 p-4 shadow-md ${
+                  index % 2 === 1 ? "reveal-delay-1" : ""
+                }`}
+              >
                 <p className="text-sm font-black uppercase text-[#4f6f57]">{detail.label}</p>
                 {detail.href ? (
                   <a href={detail.href} className="mt-2 block font-semibold hover:text-[#8c6a0c]">
@@ -70,13 +76,15 @@ export default function Contact() {
 
       <section className="bg-white px-5 py-20 lg:px-8">
         <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.8fr_1.2fr]">
-          <div>
+          <div data-reveal>
             <p className="text-sm font-black uppercase text-[#4f6f57]">Send a message</p>
             <h2 className="mt-4 text-5xl font-black uppercase leading-none">
               Enquire now.
             </h2>
           </div>
-          <ContactForm />
+          <div data-reveal className="reveal-delay-1">
+            <ContactForm />
+          </div>
         </div>
       </section>
     </main>

@@ -44,20 +44,20 @@ export default function Location() {
     <main className="bg-[#f8f3e8] pt-28 text-[#18130c] sm:pt-24">
       <section className="px-5 py-16 lg:px-8">
         <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
-          <div>
+          <div data-reveal>
             <p className="text-sm font-black uppercase text-[#2f85a7]">Location</p>
             <h1 className="mt-4 text-6xl font-black uppercase leading-none md:text-7xl">
               CBD location.
             </h1>
           </div>
-          <p className="text-lg leading-8 text-[#3a3024]">
+          <p data-reveal className="reveal-delay-1 text-lg leading-8 text-[#3a3024]">
             Hobson Lodge is close and convenient, putting central Auckland attractions, transport, supermarket stops and city parks within walking distance.
           </p>
         </div>
       </section>
 
       <section className="px-5 pb-16 lg:px-8">
-        <div className="mx-auto overflow-hidden rounded-xl border border-[#18130c]/15 bg-white shadow-lg">
+        <div data-reveal className="mx-auto overflow-hidden rounded-xl border border-[#18130c]/15 bg-white shadow-lg">
           <GoogleMapsEmbed
             apiKey={googleMapsApiKey}
             height={520}
@@ -69,15 +69,21 @@ export default function Location() {
       </section>
 
       <section className="px-5 pb-20 lg:px-8">
-        <div className="mx-auto mb-10 max-w-7xl">
+        <div data-reveal className="mx-auto mb-10 max-w-7xl">
           <p className="text-sm font-black uppercase text-[#4f6f57]">Close and convenient</p>
           <h2 className="mt-4 text-5xl font-black uppercase leading-none">
             Walking times from Hobson Lodge.
           </h2>
         </div>
         <div className="mx-auto grid max-w-7xl gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {locationNotes.map((note) => (
-            <article key={note.title} className="rounded-xl border border-[#d9b13b]/50 bg-white p-7 shadow-lg">
+          {locationNotes.map((note, index) => (
+            <article
+              key={note.title}
+              data-reveal
+              className={`rounded-xl border border-[#d9b13b]/50 bg-white p-7 shadow-lg ${
+                index % 4 === 1 ? "reveal-delay-1" : index % 4 === 2 ? "reveal-delay-2" : index % 4 === 3 ? "reveal-delay-3" : ""
+              }`}
+            >
               <h3 className="text-2xl font-black uppercase">{note.title}</h3>
               <p className="mt-4 text-lg font-semibold text-[#3a3024]">{note.copy}</p>
             </article>
@@ -86,7 +92,7 @@ export default function Location() {
       </section>
 
       <section className="grid bg-[#18130c] text-[#f8f3e8] lg:grid-cols-2">
-        <div className="relative min-h-[360px]">
+        <div data-reveal className="relative min-h-[360px]">
           <Image
             src="/images/skytower.jpg"
             alt="Sky Tower near Hobson Lodge"
@@ -95,7 +101,7 @@ export default function Location() {
             className="object-cover"
           />
         </div>
-        <div className="flex flex-col justify-center px-5 py-16 lg:px-16">
+        <div data-reveal className="reveal-delay-1 flex flex-col justify-center px-5 py-16 lg:px-16">
           <p className="text-sm font-black uppercase text-[#d9b13b]">Arrival</p>
           <h2 className="mt-4 text-5xl font-black uppercase leading-none">
             Need after-hours check-in?

@@ -64,18 +64,18 @@ export default function Home() {
 
         <div className="relative mx-auto flex min-h-[calc(100vh-6rem)] max-w-7xl flex-col justify-end px-5 pb-10 text-white lg:px-8">
           <div className="max-w-5xl">
-            <p className="mb-5 inline-flex rounded-lg bg-[#d9b13b] px-4 py-2 text-xs font-black uppercase text-[#18130c] shadow-lg">
+            <p data-reveal className="mb-5 inline-flex rounded-lg bg-[#d9b13b] px-4 py-2 text-xs font-black uppercase text-[#18130c] shadow-lg">
               Auckland CBD hostel
             </p>
-            <h1 className="text-6xl font-black uppercase leading-none sm:text-7xl lg:text-8xl">
+            <h1 data-reveal className="reveal-delay-1 text-6xl font-black uppercase leading-none sm:text-7xl lg:text-8xl">
               Hobson Lodge
             </h1>
-            <p className="mt-6 max-w-2xl text-xl leading-8 text-[#f8f3e8]">
+            <p data-reveal className="reveal-delay-2 mt-6 max-w-2xl text-xl leading-8 text-[#f8f3e8]">
               Newly refurbished Auckland CBD accommodation with decorated bedrooms, hotel grade mattresses, a spacious living room and a modern shared kitchen.
             </p>
           </div>
 
-          <div className="mt-10 grid gap-3 rounded-xl border border-white/40 bg-white/10 p-5 text-sm font-semibold uppercase text-[#f8f3e8] shadow-lg sm:grid-cols-3">
+          <div data-reveal className="reveal-delay-3 mt-10 grid gap-3 rounded-xl border border-white/40 bg-white/10 p-5 text-sm font-semibold uppercase text-[#f8f3e8] shadow-lg sm:grid-cols-3">
             <p>8 minutes to Sky Tower</p>
             <p>6 minutes to InterCity Bus Terminal</p>
             <p>Good for nights, weeks, work and study</p>
@@ -84,7 +84,7 @@ export default function Home() {
       </section>
 
       <section className="bg-[#18130c] px-5 py-5 text-[#f8f3e8] lg:px-8">
-        <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-4">
+        <div data-reveal className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-4">
           <p className="text-sm font-bold uppercase text-[#d9b13b]">
             Comfortable rooms, free WiFi, modern kitchen and central CBD access.
           </p>
@@ -98,13 +98,13 @@ export default function Home() {
 
       <section className="px-5 py-20 lg:px-8">
         <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
-          <div>
+          <div data-reveal>
             <p className="text-sm font-black uppercase text-[#2f85a7]">In the heart of the city</p>
             <h2 className="mt-4 text-5xl font-black uppercase leading-none md:text-6xl">
               In the heart of Auckland CBD.
             </h2>
           </div>
-          <div className="space-y-5 text-lg leading-8 text-[#3a3024]">
+          <div data-reveal className="reveal-delay-1 space-y-5 text-lg leading-8 text-[#3a3024]">
             <p>
               Hobson Lodge is newly refurbished with decorated bedrooms, hotel grade mattresses, spacious shared living areas and a modern kitchen.
             </p>
@@ -117,8 +117,14 @@ export default function Home() {
 
       <section className="bg-white px-5 py-20 lg:px-8">
         <div className="mx-auto grid max-w-7xl gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {features.map((feature) => (
-            <div key={feature} className="rounded-xl border border-[#d9b13b]/40 bg-[#f8f3e8] p-6 shadow-lg">
+          {features.map((feature, index) => (
+            <div
+              key={feature}
+              data-reveal
+              className={`rounded-xl border border-[#d9b13b]/40 bg-[#f8f3e8] p-6 shadow-lg ${
+                index % 3 === 1 ? "reveal-delay-1" : index % 3 === 2 ? "reveal-delay-2" : ""
+              }`}
+            >
               <p className="text-lg font-bold">{feature}</p>
             </div>
           ))}
@@ -127,7 +133,7 @@ export default function Home() {
 
       <section className="px-5 py-20 lg:px-8">
         <div className="mx-auto max-w-7xl">
-          <div className="mb-10 flex flex-col justify-between gap-6 md:flex-row md:items-end">
+          <div data-reveal className="mb-10 flex flex-col justify-between gap-6 md:flex-row md:items-end">
             <div>
               <p className="text-sm font-black uppercase text-[#4f6f57]">Rooms and spaces</p>
               <h2 className="mt-4 text-5xl font-black uppercase leading-none md:text-6xl">
@@ -140,8 +146,14 @@ export default function Home() {
           </div>
 
           <div className="grid gap-6 md:grid-cols-3">
-            {rooms.map((room) => (
-              <article key={room.title} className="overflow-hidden rounded-xl border border-[#18130c]/15 bg-white shadow-lg">
+            {rooms.map((room, index) => (
+              <article
+                key={room.title}
+                data-reveal
+                className={`overflow-hidden rounded-xl border border-[#18130c]/15 bg-white shadow-lg ${
+                  index === 1 ? "reveal-delay-1" : index === 2 ? "reveal-delay-2" : ""
+                }`}
+              >
                 <div className="relative aspect-[4/3]">
                   <Image
                     src={room.image}
@@ -163,8 +175,14 @@ export default function Home() {
 
       <section className="bg-[#4f6f57] px-5 py-16 text-white lg:px-8">
         <div className="mx-auto grid max-w-7xl gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {stats.map(([value, label]) => (
-            <div key={label} className="rounded-xl border border-white/30 bg-white/10 p-5 shadow-lg">
+          {stats.map(([value, label], index) => (
+            <div
+              key={label}
+              data-reveal
+              className={`rounded-xl border border-white/30 bg-white/10 p-5 shadow-lg ${
+                index === 1 ? "reveal-delay-1" : index === 2 ? "reveal-delay-2" : index === 3 ? "reveal-delay-3" : ""
+              }`}
+            >
               <p className="text-5xl font-black uppercase leading-none">{value}</p>
               <p className="mt-2 text-sm font-bold uppercase">{label}</p>
             </div>
@@ -174,18 +192,21 @@ export default function Home() {
 
       <section className="bg-white px-5 py-20 lg:px-8">
         <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.8fr_1.2fr]">
-          <div>
+          <div data-reveal>
             <p className="text-sm font-black uppercase text-[#4f6f57]">Useful links</p>
             <h2 className="mt-4 text-5xl font-black uppercase leading-none">
               Plan more of Auckland.
             </h2>
           </div>
           <div className="grid gap-4 sm:grid-cols-2">
-            {usefulLinks.map(([label, href]) => (
+            {usefulLinks.map(([label, href], index) => (
               <a
                 key={label}
+                data-reveal
                 href={href}
-                className="rounded-xl border border-[#18130c]/15 bg-[#f8f3e8] p-5 font-bold shadow-md hover:border-[#d9b13b] hover:text-[#8c6a0c]"
+                className={`rounded-xl border border-[#18130c]/15 bg-[#f8f3e8] p-5 font-bold shadow-md hover:border-[#d9b13b] hover:text-[#8c6a0c] ${
+                  index % 2 === 1 ? "reveal-delay-1" : ""
+                }`}
                 rel="noreferrer"
                 target="_blank"
               >
@@ -198,7 +219,7 @@ export default function Home() {
 
       <section className="px-5 py-20 lg:px-8">
         <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.75fr_1.25fr] lg:items-center">
-          <div>
+          <div data-reveal>
             <p className="text-sm font-black uppercase text-[#2f85a7]">Location</p>
             <h2 className="mt-4 text-5xl font-black uppercase leading-none md:text-6xl">
               Close to the city, easy to get around.
@@ -207,7 +228,7 @@ export default function Home() {
               Find us at 224 Hobson Street in Auckland CBD, close to Queen Street, Sky Tower, InterCity Bus Terminal and public transport.
             </p>
           </div>
-          <div className="overflow-hidden rounded-xl border border-[#18130c]/15 bg-white shadow-lg">
+          <div data-reveal className="reveal-delay-1 overflow-hidden rounded-xl border border-[#18130c]/15 bg-white shadow-lg">
             <GoogleMapsEmbed
               apiKey={googleMapsApiKey}
               height={450}

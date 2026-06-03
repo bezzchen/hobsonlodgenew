@@ -45,6 +45,7 @@ export default function BookButton({ children = "Book", className = "" }: BookBu
       {isOpen ? (
         <div
           className="fixed inset-0 z-[100] flex items-center justify-center bg-[#18130c]/60 px-5"
+          data-lenis-prevent
           role="presentation"
           onMouseDown={() => setIsOpen(false)}
         >

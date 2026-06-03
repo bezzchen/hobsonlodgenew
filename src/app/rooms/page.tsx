@@ -92,13 +92,13 @@ export default function Rooms() {
     <main className="bg-[#f8f3e8] pt-28 text-[#18130c] sm:pt-24">
       <section className="px-5 py-16 lg:px-8">
         <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
-          <div>
+          <div data-reveal>
             <p className="text-sm font-black uppercase text-[#2f85a7]">Our rooms</p>
             <h1 className="mt-4 text-6xl font-black uppercase leading-none md:text-7xl">
               Cozy and comfortable accommodation.
             </h1>
           </div>
-          <p className="text-lg leading-8 text-[#3a3024]">
+          <p data-reveal className="reveal-delay-1 text-lg leading-8 text-[#3a3024]">
             Hobson Lodge offers mixed dormitory beds, a female dormitory option and double rooms with either shared bathroom access or a private ensuite.
           </p>
         </div>
@@ -109,7 +109,10 @@ export default function Rooms() {
           {roomOptions.map((room, index) => (
             <article
               key={room.title}
-              className="grid overflow-hidden rounded-xl border border-[#18130c]/15 bg-white shadow-lg lg:grid-cols-2"
+              data-reveal
+              className={`grid overflow-hidden rounded-xl border border-[#18130c]/15 bg-white shadow-lg lg:grid-cols-2 ${
+                index % 2 === 1 ? "reveal-delay-1" : ""
+              }`}
             >
               <div className={`relative min-h-[320px] ${index % 2 === 1 ? "lg:order-2" : ""}`}>
                 <Image
@@ -141,15 +144,21 @@ export default function Rooms() {
 
       <section className="bg-[#18130c] px-5 py-16 text-[#f8f3e8] lg:px-8">
         <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.8fr_1.2fr]">
-          <div>
+          <div data-reveal>
             <p className="text-sm font-black uppercase text-[#d9b13b]">Amenities</p>
             <h2 className="mt-4 text-5xl font-black uppercase leading-none">
               Facilities across the hostel.
             </h2>
           </div>
           <div className="grid gap-4 sm:grid-cols-2">
-            {amenities.map((item) => (
-              <p key={item} className="rounded-xl border border-white/20 p-5 font-semibold shadow-lg">
+            {amenities.map((item, index) => (
+              <p
+                key={item}
+                data-reveal
+                className={`rounded-xl border border-white/20 p-5 font-semibold shadow-lg ${
+                  index % 2 === 1 ? "reveal-delay-1" : ""
+                }`}
+              >
                 {item}
               </p>
             ))}
@@ -158,13 +167,13 @@ export default function Rooms() {
       </section>
 
       <section className="px-5 py-20 text-center lg:px-8">
-        <h2 className="mx-auto max-w-4xl text-5xl font-black uppercase leading-none md:text-6xl">
+        <h2 data-reveal className="mx-auto max-w-4xl text-5xl font-black uppercase leading-none md:text-6xl">
           Enquire now or book direct.
         </h2>
-        <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-[#3a3024]">
+        <p data-reveal className="reveal-delay-1 mx-auto mt-6 max-w-2xl text-lg leading-8 text-[#3a3024]">
           Ask about room availability, parking pre-booking or the best room type for your stay.
         </p>
-        <div className="mt-8 flex flex-wrap justify-center gap-4">
+        <div data-reveal className="reveal-delay-2 mt-8 flex flex-wrap justify-center gap-4">
           <BookButton
             className="rounded-lg border border-[#18130c] bg-[#18130c] px-6 py-3 text-sm font-bold uppercase text-white shadow-lg hover:bg-[#d9b13b] hover:text-[#18130c]"
           >

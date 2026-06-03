@@ -72,13 +72,13 @@ export default function Rules() {
     <main className="bg-[#f8f3e8] pt-28 text-[#18130c] sm:pt-24">
       <section className="px-5 py-16 lg:px-8">
         <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
-          <div>
+          <div data-reveal>
             <p className="text-sm font-black uppercase text-[#2f85a7]">Hostel rules</p>
             <h1 className="mt-4 text-6xl font-black uppercase leading-none md:text-7xl">
               Rules for every stay.
             </h1>
           </div>
-          <p className="text-lg leading-8 text-[#3a3024]">
+          <p data-reveal className="reveal-delay-1 text-lg leading-8 text-[#3a3024]">
             These policies help keep Hobson Lodge clean, secure and comfortable for everyone staying with us.
           </p>
         </div>
@@ -87,7 +87,13 @@ export default function Rules() {
       <section className="px-5 pb-20 lg:px-8">
         <div className="mx-auto grid max-w-7xl gap-4 md:grid-cols-2">
           {rules.map((rule, index) => (
-            <article key={rule.title} className="rounded-xl border border-[#18130c]/15 bg-white p-6 shadow-lg">
+            <article
+              key={rule.title}
+              data-reveal
+              className={`rounded-xl border border-[#18130c]/15 bg-white p-6 shadow-lg ${
+                index % 2 === 1 ? "reveal-delay-1" : ""
+              }`}
+            >
               <p className="text-sm font-black uppercase text-[#d9b13b]">
                 {String(index + 1).padStart(2, "0")}
               </p>
@@ -99,15 +105,16 @@ export default function Rules() {
       </section>
 
       <section className="bg-[#18130c] px-5 py-16 text-center text-[#f8f3e8] lg:px-8">
-        <h2 className="mx-auto max-w-4xl text-5xl font-black uppercase leading-none">
+        <h2 data-reveal className="mx-auto max-w-4xl text-5xl font-black uppercase leading-none">
           Questions about arrival or policies?
         </h2>
-        <p className="mx-auto mt-6 max-w-2xl text-lg leading-8">
+        <p data-reveal className="reveal-delay-1 mx-auto mt-6 max-w-2xl text-lg leading-8">
           Contact reception before your stay and we will help you plan the smoothest arrival.
         </p>
         <Link
           href="/contact"
-          className="mt-8 inline-flex rounded-lg border border-[#d9b13b] bg-[#d9b13b] px-6 py-3 text-sm font-bold uppercase text-[#18130c] shadow-lg hover:bg-transparent hover:text-[#d9b13b]"
+          data-reveal
+          className="reveal-delay-2 mt-8 inline-flex rounded-lg border border-[#d9b13b] bg-[#d9b13b] px-6 py-3 text-sm font-bold uppercase text-[#18130c] shadow-lg hover:bg-transparent hover:text-[#d9b13b]"
         >
           Contact us
         </Link>
