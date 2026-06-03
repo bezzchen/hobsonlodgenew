@@ -2,6 +2,17 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## Getting Started
 
+Create a local `.env.local` file with the environment variables used by the site:
+
+```bash
+NEXT_PUBLIC_GOOGLE_MAPS_API_KEY=your_google_maps_api_key
+RESEND_API_KEY=your_resend_api_key
+CONTACT_EMAIL=recipient@example.com
+RESEND_FROM="Hobson Lodge <contact@your-domain.com>"
+```
+
+The Resend key should stay in `.env.local` or your deployment provider's secret settings. Do not commit real API keys.
+
 First, run the development server:
 
 ```bash
