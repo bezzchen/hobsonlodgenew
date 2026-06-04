@@ -105,7 +105,6 @@ export default function Header() {
             src="/images/hobsonlodgelogo.png"
             alt=""
             fill
-            priority
             sizes="(min-width: 640px) 224px, 160px"
             className={`object-contain transition-opacity duration-500 ${
               isAtTop ? "opacity-0" : "opacity-100"
