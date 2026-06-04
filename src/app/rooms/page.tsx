@@ -2,6 +2,16 @@ import Image from "next/image";
 import Link from "next/link";
 import BookButton from "../../components/BookButton";
 import SiteIcon, { type SiteIconName } from "../../components/SiteIcon";
+import { createSeoMetadata } from "../../lib/seo";
+
+export const metadata = createSeoMetadata({
+  title: "Auckland Hostel Rooms & Dorm Beds",
+  description:
+    "Compare Hobson Lodge room options in Auckland CBD, including mixed dorm beds, female dorm beds and private double rooms with shared or ensuite bathrooms.",
+  path: "/rooms",
+  imageUrl: "/images/bedin8_1.jpg",
+  imageAlt: "Mixed dormitory beds at Hobson Lodge Auckland",
+});
 
 const roomOptions = [
   {

@@ -1,10 +1,11 @@
-import type { Metadata } from "next";
+import { createSeoMetadata } from "../../lib/seo";
 
-export const metadata: Metadata = {
-  title: "Privacy Policy | Hobson Lodge",
+export const metadata = createSeoMetadata({
+  title: "Privacy Policy",
   description:
     "How Hobson Lodge collects, uses, stores and protects personal information for enquiries, bookings and website use.",
-};
+  path: "/privacy",
+});
 
 const policySections = [
   {

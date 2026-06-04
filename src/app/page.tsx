@@ -3,6 +3,17 @@ import Link from "next/link";
 import { GoogleMapsEmbed } from "@next/third-parties/google";
 import BookButton from "../components/BookButton";
 import SiteIcon, { type SiteIconName } from "../components/SiteIcon";
+import { createSeoMetadata } from "../lib/seo";
+
+export const metadata = createSeoMetadata({
+  title: "Hobson Lodge | Auckland CBD Hostel Accommodation",
+  titleAbsolute: true,
+  description:
+    "Stay at Hobson Lodge, a newly refurbished Auckland CBD hostel near Sky Tower, Queen Street and InterCity Bus Terminal with dorm beds, double rooms and free WiFi.",
+  path: "/",
+  imageUrl: "/images/0.jpg",
+  imageAlt: "Hobson Lodge exterior on Hobson Street in Auckland CBD",
+});
 
 const features = [
   { label: "Newly refurbished bedrooms", icon: "sparkle" },

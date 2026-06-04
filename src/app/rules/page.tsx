@@ -1,5 +1,13 @@
 import Link from "next/link";
 import SiteIcon, { type SiteIconName } from "../../components/SiteIcon";
+import { createSeoMetadata } from "../../lib/seo";
+
+export const metadata = createSeoMetadata({
+  title: "Hostel Rules & Check-In Policies",
+  description:
+    "Read Hobson Lodge hostel rules, reception hours, check-in and check-out times, age restriction, key deposit, cancellation policy and guest expectations.",
+  path: "/rules",
+});
 
 const rules = [
   {

@@ -1,6 +1,16 @@
 import Image from "next/image";
 import ContactForm from "../../components/ContactForm";
 import SiteIcon, { type SiteIconName } from "../../components/SiteIcon";
+import { createSeoMetadata } from "../../lib/seo";
+
+export const metadata = createSeoMetadata({
+  title: "Contact Hobson Lodge Auckland",
+  description:
+    "Contact Hobson Lodge in Auckland CBD for room enquiries, direct booking questions, parking pre-booking, after-hours arrival details and accommodation support.",
+  path: "/contact",
+  imageUrl: "/images/2.jpg",
+  imageAlt: "Hobson Lodge guest corridor in Auckland CBD",
+});
 
 const contactDetails = [
   {

@@ -2,6 +2,16 @@ import Image from "next/image";
 import Link from "next/link";
 import { GoogleMapsEmbed } from "@next/third-parties/google";
 import SiteIcon, { type SiteIconName } from "../../components/SiteIcon";
+import { createSeoMetadata } from "../../lib/seo";
+
+export const metadata = createSeoMetadata({
+  title: "Auckland CBD Hostel Location",
+  description:
+    "Find Hobson Lodge at 224 Hobson Street in Auckland CBD, close to Sky Tower, Queen Street, InterCity Bus Terminal, Britomart and central city attractions.",
+  path: "/location",
+  imageUrl: "/images/skytower.jpg",
+  imageAlt: "Sky Tower near Hobson Lodge in Auckland CBD",
+});
 
 const locationNotes = [
   {
