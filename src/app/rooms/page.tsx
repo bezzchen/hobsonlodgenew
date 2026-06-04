@@ -11,14 +11,8 @@ const roomOptions = [
     icon: "bed",
     badge: "8",
     details: [
-      "220-240 volt circuits",
       "Cable television",
-      "Ceiling fan",
-      "Hairdryer",
       "Microwave",
-      "Wireless internet",
-      "Individual under bed locker",
-      "Individual storage cabinet",
     ],
   },
   {
@@ -27,14 +21,7 @@ const roomOptions = [
     summary: "Shared bathroom, shared toilet, ventilation system and free WiFi.",
     icon: "bed",
     badge: "6",
-    details: [
-      "220-240 volt circuits",
-      "Ceiling fan",
-      "Hairdryer",
-      "Wireless internet",
-      "Individual under bed locker",
-      "Individual storage cabinet",
-    ],
+    details: [],
   },
   {
     title: "Bed in 6 Bed Female Dormitory Room",
@@ -42,14 +29,7 @@ const roomOptions = [
     summary: "Female dormitory accommodation with shared bathroom, shared toilet, ventilation and free WiFi.",
     icon: "bed",
     badge: "6",
-    details: [
-      "220-240 volt circuits",
-      "Ceiling fan",
-      "Hairdryer",
-      "Wireless internet",
-      "Individual under bed locker",
-      "Individual storage cabinet",
-    ],
+    details: [],
   },
   {
     title: "Double Room with Shared Bathroom",
@@ -57,12 +37,7 @@ const roomOptions = [
     summary: "A private double room with shared bathroom access and free WiFi.",
     icon: "bed",
     badge: "2",
-    details: [
-      "220-240 volt circuits",
-      "Ceiling fan",
-      "Hairdryer",
-      "Wireless internet",
-    ],
+    details: [],
   },
   {
     title: "Double Room with Ensuite",
@@ -72,11 +47,7 @@ const roomOptions = [
     badge: "2",
     details: [
       "Private bathroom",
-      "220-240 volt circuits",
-      "Ceiling fan",
-      "Hairdryer",
       "Microwave",
-      "Wireless internet",
     ],
   },
 ] satisfies {
@@ -90,9 +61,11 @@ const roomOptions = [
 
 const amenities = [
   { label: "Room services", icon: "room" },
+  { label: "220-240 volt circuits", icon: "sparkle" },
   { label: "Heaters in all rooms", icon: "sparkle" },
   { label: "Onsite parking ($15 NZD/day)", icon: "parking" },
   { label: "Fully supplied bed linen", icon: "bed" },
+  { label: "Hairdryers available", icon: "wind" },
   { label: "Individual under bed lockers", icon: "locker" },
   { label: "Individual storage cabinets", icon: "locker" },
   { label: "Ventilation system in all rooms", icon: "wind" },
@@ -106,14 +79,8 @@ const amenities = [
 ] satisfies { icon: SiteIconName; label: string }[];
 
 const detailIconMap = new Map<string, SiteIconName>([
-  ["220-240 volt circuits", "sparkle"],
   ["Cable television", "tv"],
-  ["Ceiling fan", "fan"],
-  ["Hairdryer", "wind"],
   ["Microwave", "kitchen"],
-  ["Wireless internet", "wifi"],
-  ["Individual under bed locker", "locker"],
-  ["Individual storage cabinet", "locker"],
   ["Private bathroom", "key"],
 ]);
 
@@ -174,19 +141,21 @@ export default function Rooms() {
                 </div>
                 <h2 className="mt-3 text-3xl font-black uppercase leading-none sm:text-4xl">{room.title}</h2>
                 <p className="mt-4 text-base leading-7 text-[#3a3024] sm:mt-5 sm:text-lg sm:leading-8">{room.summary}</p>
-                <ul className="mt-6 grid gap-3 sm:mt-8 sm:grid-cols-2 sm:gap-4">
-                  {room.details.map((detail) => (
-                    <li key={detail} className="flex items-center gap-3 rounded-lg border border-[#d9b13b]/60 p-3 text-sm font-semibold shadow-sm sm:text-base">
-                      <span className={smallIconBoxClassName}>
-                        <SiteIcon
-                          className="h-5 w-5"
-                          name={detailIconMap.get(detail) ?? "sparkle"}
-                        />
-                      </span>
-                      <span>{detail}</span>
-                    </li>
-                  ))}
-                </ul>
+                {room.details.length > 0 ? (
+                  <ul className="mt-6 grid gap-3 sm:mt-8 sm:grid-cols-2 sm:gap-4">
+                    {room.details.map((detail) => (
+                      <li key={detail} className="flex items-center gap-3 rounded-lg border border-[#d9b13b]/60 p-3 text-sm font-semibold shadow-sm sm:text-base">
+                        <span className={smallIconBoxClassName}>
+                          <SiteIcon
+                            className="h-5 w-5"
+                            name={detailIconMap.get(detail) ?? "sparkle"}
+                          />
+                        </span>
+                        <span>{detail}</span>
+                      </li>
+                    ))}
+                  </ul>
+                ) : null}
               </div>
             </article>
           ))}
