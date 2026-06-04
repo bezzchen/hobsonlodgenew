@@ -48,7 +48,7 @@ const roomSummaries = [
     image: "/images/bedin6f_1.jpg",
     copy: "A 6-bed female dormitory option with shared bathroom access, ventilation, free WiFi, ceiling fans and individual storage.",
     icon: "people",
-    badge: "6F",
+    badge: "6",
   },
   {
     title: "Double Rooms",
@@ -67,6 +67,9 @@ const roomSummaries = [
 
 const iconBoxClassName =
   "flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#d9b13b] text-[#18130c] shadow-md";
+
+const roomCountIconClassName =
+  "inline-flex items-center gap-2 rounded-xl bg-[#d9b13b] px-3 py-2 text-[#18130c] shadow-md";
 
 const darkIconBoxClassName =
   "flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-white/15 text-[#d9b13b] shadow-md";
@@ -200,8 +203,11 @@ export default function Home() {
                   />
                 </div>
                 <div className="p-6">
-                  <div className={iconBoxClassName}>
-                    <SiteIcon badge={room.badge} name={room.icon} />
+                  <div className={roomCountIconClassName}>
+                    <SiteIcon name={room.icon} />
+                    <span className="rounded-md bg-[#18130c]/10 px-2 py-1 text-xs font-black uppercase leading-none">
+                      {room.badge}
+                    </span>
                   </div>
                   <h3 className="mt-5 text-xl font-black uppercase sm:text-2xl">{room.title}</h3>
                   <p className="mt-3 text-sm leading-6 text-[#3a3024] sm:text-base sm:leading-7">{room.copy}</p>

@@ -41,7 +41,7 @@ const roomOptions = [
     image: "/images/bedin6f_1.jpg",
     summary: "Female dormitory accommodation with shared bathroom, shared toilet, ventilation and free WiFi.",
     icon: "people",
-    badge: "6F",
+    badge: "6",
     details: [
       "220-240 volt circuits",
       "Ceiling fan",
@@ -117,8 +117,8 @@ const detailIconMap = new Map<string, SiteIconName>([
   ["Private bathroom", "key"],
 ]);
 
-const iconBoxClassName =
-  "flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#d9b13b] text-[#18130c] shadow-md";
+const roomCountIconClassName =
+  "inline-flex items-center gap-2 rounded-xl bg-[#d9b13b] px-3 py-2 text-[#18130c] shadow-md";
 
 const smallIconBoxClassName =
   "flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[#f8f3e8] text-[#4f6f57] shadow-sm";
@@ -166,8 +166,11 @@ export default function Rooms() {
                 <p className="text-sm font-black uppercase text-[#4f6f57]">
                   Limited onsite parking available by pre-booking; charges apply.
                 </p>
-                <div className={`${iconBoxClassName} mt-5`}>
-                  <SiteIcon badge={room.badge} name={room.icon} />
+                <div className={`${roomCountIconClassName} mt-5`}>
+                  <SiteIcon name={room.icon} />
+                  <span className="rounded-md bg-[#18130c]/10 px-2 py-1 text-xs font-black uppercase leading-none">
+                    {room.badge}
+                  </span>
                 </div>
                 <h2 className="mt-3 text-3xl font-black uppercase leading-none sm:text-4xl">{room.title}</h2>
                 <p className="mt-4 text-base leading-7 text-[#3a3024] sm:mt-5 sm:text-lg sm:leading-8">{room.summary}</p>

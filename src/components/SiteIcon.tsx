@@ -41,7 +41,6 @@ export type SiteIconName =
   | "wind";
 
 type SiteIconProps = {
-  badge?: string;
   className?: string;
   name: SiteIconName;
 };
@@ -348,7 +347,7 @@ const icons: Record<SiteIconName, ReactNode> = {
   ),
 };
 
-export default function SiteIcon({ badge, className = "h-6 w-6", name }: SiteIconProps) {
+export default function SiteIcon({ className = "h-6 w-6", name }: SiteIconProps) {
   return (
     <svg
       aria-hidden="true"
@@ -362,24 +361,6 @@ export default function SiteIcon({ badge, className = "h-6 w-6", name }: SiteIco
       viewBox="0 0 48 48"
     >
       {icons[name]}
-      {badge ? (
-        <g>
-          <circle cx="36" cy="12" fill="currentColor" r="9" stroke="none" />
-          <text
-            dominantBaseline="central"
-            fill="#f8f3e8"
-            fontFamily="Arial, Helvetica, sans-serif"
-            fontSize={badge.length > 1 ? "8" : "10"}
-            fontWeight="900"
-            stroke="none"
-            textAnchor="middle"
-            x="36"
-            y="12"
-          >
-            {badge}
-          </text>
-        </g>
-      ) : null}
     </svg>
   );
 }
