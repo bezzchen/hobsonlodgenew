@@ -40,7 +40,7 @@ const roomOptions = [
     title: "Bed in 6 Bed Female Dormitory Room",
     image: "/images/bedin6f_1.jpg",
     summary: "Female dormitory accommodation with shared bathroom, shared toilet, ventilation and free WiFi.",
-    icon: "people",
+    icon: "bed",
     badge: "6",
     details: [
       "220-240 volt circuits",
@@ -55,7 +55,7 @@ const roomOptions = [
     title: "Double Room with Shared Bathroom",
     image: "/images/dbs_1.jpg",
     summary: "A private double room with shared bathroom access and free WiFi.",
-    icon: "room",
+    icon: "bed",
     badge: "2",
     details: [
       "220-240 volt circuits",
@@ -68,7 +68,7 @@ const roomOptions = [
     title: "Double Room with Ensuite",
     image: "/images/dbe_1.jpg",
     summary: "A private double room with ensuite bathroom, microwave and free WiFi.",
-    icon: "key",
+    icon: "bed",
     badge: "2",
     details: [
       "Private bathroom",
@@ -118,7 +118,7 @@ const detailIconMap = new Map<string, SiteIconName>([
 ]);
 
 const roomCountIconClassName =
-  "inline-flex items-center gap-2 rounded-xl bg-[#d9b13b] px-3 py-2 text-[#18130c] shadow-md";
+  "inline-flex w-fit items-center gap-3 rounded-xl border border-[#d9b13b]/70 bg-[#f8f3e8] px-3 py-2 text-[#18130c] shadow-md";
 
 const smallIconBoxClassName =
   "flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[#f8f3e8] text-[#4f6f57] shadow-sm";
@@ -168,7 +168,7 @@ export default function Rooms() {
                 </p>
                 <div className={`${roomCountIconClassName} mt-5`}>
                   <SiteIcon name={room.icon} />
-                  <span className="rounded-md bg-[#18130c]/10 px-2 py-1 text-xs font-black uppercase leading-none">
+                  <span className="min-w-7 rounded-lg bg-[#d9b13b] px-2 py-1 text-center text-xs font-black uppercase leading-none">
                     {room.badge}
                   </span>
                 </div>

@@ -47,14 +47,14 @@ const roomSummaries = [
     title: "Female Dorm Beds",
     image: "/images/bedin6f_1.jpg",
     copy: "A 6-bed female dormitory option with shared bathroom access, ventilation, free WiFi, ceiling fans and individual storage.",
-    icon: "people",
+    icon: "bed",
     badge: "6",
   },
   {
     title: "Double Rooms",
     image: "/images/dbe_1.jpg",
     copy: "Private double room options are available with either a shared bathroom or ensuite, plus free WiFi and useful in-room amenities.",
-    icon: "room",
+    icon: "bed",
     badge: "2",
   },
 ] satisfies {
@@ -69,7 +69,7 @@ const iconBoxClassName =
   "flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#d9b13b] text-[#18130c] shadow-md";
 
 const roomCountIconClassName =
-  "inline-flex items-center gap-2 rounded-xl bg-[#d9b13b] px-3 py-2 text-[#18130c] shadow-md";
+  "inline-flex w-fit items-center gap-3 rounded-xl border border-[#d9b13b]/70 bg-[#f8f3e8] px-3 py-2 text-[#18130c] shadow-md";
 
 const darkIconBoxClassName =
   "flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-white/15 text-[#d9b13b] shadow-md";
@@ -205,7 +205,7 @@ export default function Home() {
                 <div className="p-6">
                   <div className={roomCountIconClassName}>
                     <SiteIcon name={room.icon} />
-                    <span className="rounded-md bg-[#18130c]/10 px-2 py-1 text-xs font-black uppercase leading-none">
+                    <span className="min-w-7 rounded-lg bg-[#d9b13b] px-2 py-1 text-center text-xs font-black uppercase leading-none">
                       {room.badge}
                     </span>
                   </div>
