@@ -1,3 +1,4 @@
+import Link from "next/link";
 import BookButton from "./BookButton";
 
 export default function Footer() {
@@ -37,6 +38,9 @@ export default function Footer() {
                         Check-in: 2pm - 5pm<br />
                         After-hours: contact the hotel directly
                     </p>
+                    <Link href="/privacy" className="inline-flex font-bold uppercase text-[#d9b13b] hover:text-white">
+                        Privacy policy
+                    </Link>
                 </div>
             </div>
         </footer>
