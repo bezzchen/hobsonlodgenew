@@ -88,7 +88,7 @@ const darkIconBoxClassName =
 const linkIconBoxClassName =
   "flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#18130c] text-[#d9b13b] shadow-md";
 
-const googleMapsApiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY ?? "";
+const googleMapsApiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY;
 
 export default function Home() {
   return (

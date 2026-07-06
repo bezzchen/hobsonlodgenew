@@ -11,6 +11,8 @@ CONTACT_EMAIL=recipient@example.com
 RESEND_FROM="Hobson Lodge <contact@your-domain.com>"
 ```
 
+`CONTACT_EMAIL` controls who receives contact form submissions. Use one email address, or a comma-separated list for multiple recipients. Replies to those notification emails go to the guest email address submitted in the form.
+
 The Resend key should stay in `.env.local` or your deployment provider's secret settings. Do not commit real API keys.
 
 First, run the development server:

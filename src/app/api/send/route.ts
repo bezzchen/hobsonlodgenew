@@ -4,6 +4,19 @@ import ContactEmail from "@/contact/contact";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
+function isValidEmail(email: string) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}
+
+function parseRecipients(value: string | undefined) {
+  return (
+    value
+      ?.split(",")
+      .map((recipient) => recipient.trim())
+      .filter(Boolean) ?? []
+  );
+}
+
 export async function POST(request: Request) {
   try {
     const body = await request.json();
@@ -20,10 +33,27 @@ export async function POST(request: Request) {
       );
     }
 
-    const to = process.env.CONTACT_EMAIL;
-    if (!to) {
+    if (!isValidEmail(email)) {
+      return NextResponse.json(
+        { error: "A valid email address is required." },
+        { status: 400 },
+      );
+    }
+
+    const recipients = parseRecipients(process.env.CONTACT_EMAIL);
+    if (recipients.length === 0) {
       return NextResponse.json(
         { error: "Contact email is not configured." },
+        { status: 500 },
+      );
+    }
+
+    const invalidRecipients = recipients.filter(
+      (recipient) => !isValidEmail(recipient),
+    );
+    if (invalidRecipients.length > 0) {
+      return NextResponse.json(
+        { error: "Contact email is not configured correctly." },
         { status: 500 },
       );
     }
@@ -31,7 +61,8 @@ export async function POST(request: Request) {
     const { error } = await resend.emails.send({
       from:
         process.env.RESEND_FROM ?? "Contact Form <onboarding@resend.dev>",
-      to: [to],
+      to: recipients,
+      replyTo: email,
       subject: subject ? `New enquiry: ${subject}` : `New message from ${name}`,
       react: ContactEmail({
         userFirstname: name,
