@@ -8,10 +8,11 @@ Create a local `.env.local` file with the environment variables used by the site
 NEXT_PUBLIC_GOOGLE_MAPS_API_KEY=your_google_maps_api_key
 RESEND_API_KEY=your_resend_api_key
 CONTACT_EMAIL=recipient@example.com
-RESEND_FROM="Hobson Lodge <contact@your-domain.com>"
 ```
 
 `CONTACT_EMAIL` controls who receives contact form submissions. Use one email address, or a comma-separated list for multiple recipients. Replies to those notification emails go to the guest email address submitted in the form.
+
+Contact form notifications send from `Hobson Lodge <info@hobsonlodge.co.nz>`, so `hobsonlodge.co.nz` must be verified in Resend.
 
 The Resend key should stay in `.env.local` or your deployment provider's secret settings. Do not commit real API keys.
 

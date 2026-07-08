@@ -3,6 +3,7 @@ import { Resend } from "resend";
 import ContactEmail from "@/contact/contact";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
+const contactFormSender = "Hobson Lodge <info@hobsonlodge.co.nz>";
 
 function isValidEmail(email: string) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
@@ -59,8 +60,7 @@ export async function POST(request: Request) {
     }
 
     const { error } = await resend.emails.send({
-      from:
-        process.env.RESEND_FROM ?? "Contact Form <onboarding@resend.dev>",
+      from: contactFormSender,
       to: recipients,
       replyTo: email,
       subject: subject ? `New enquiry: ${subject}` : `New message from ${name}`,

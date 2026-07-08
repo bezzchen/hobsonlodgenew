@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { GoogleMapsEmbed } from "@next/third-parties/google";
 import SiteIcon, { type SiteIconName } from "../../components/SiteIcon";
+import { getRequiredEnv } from "../../lib/env";
 import { createSeoMetadata } from "../../lib/seo";
 
 export const metadata = createSeoMetadata({
@@ -87,7 +88,7 @@ const locationNotes = [
   walkTime: string;
 }[];
 
-const googleMapsApiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY ?? "";
+const googleMapsApiKey = getRequiredEnv("NEXT_PUBLIC_GOOGLE_MAPS_API_KEY");
 
 const iconBoxClassName =
   "flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#d9b13b] text-[#18130c] shadow-md";
