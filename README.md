@@ -6,6 +6,9 @@ Create a local `.env.local` file with the environment variables used by the site
 
 ```bash
 NEXT_PUBLIC_GOOGLE_MAPS_API_KEY=your_google_maps_api_key
+NEXT_PUBLIC_RECAPTCHA_SITE_KEY=your_recaptcha_enterprise_site_key
+RECAPTCHA_PROJECT_ID=your_google_cloud_project_id
+RECAPTCHA_API_KEY=your_recaptcha_enterprise_api_key
 RESEND_API_KEY=your_resend_api_key
 CONTACT_EMAIL=recipient@example.com
 ```
@@ -13,6 +16,8 @@ CONTACT_EMAIL=recipient@example.com
 `CONTACT_EMAIL` controls who receives contact form submissions. Use one email address, or a comma-separated list for multiple recipients. Replies to those notification emails go to the guest email address submitted in the form.
 
 Contact form notifications send from `Hobson Lodge <info@hobsonlodge.co.nz>`, so `hobsonlodge.co.nz` must be verified in Resend.
+
+The contact form uses reCAPTCHA Enterprise with the `contact_form` action before sending email. Set `RECAPTCHA_MIN_SCORE` only if you want to override the default score threshold of `0.5`.
 
 The Resend key should stay in `.env.local` or your deployment provider's secret settings. Do not commit real API keys.
 
