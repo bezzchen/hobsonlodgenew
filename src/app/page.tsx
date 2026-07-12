@@ -2,9 +2,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { GoogleMapsEmbed } from "@next/third-parties/google";
 import BookButton from "../components/BookButton";
+import LocationCardTile from "../components/LocationCardTile";
 import SiteIcon, { type SiteIconName } from "../components/SiteIcon";
 import { createSeoMetadata } from "../lib/seo";
 import { getRequiredEnv } from "../lib/env";
+import { homeLocationCards } from "../lib/locationCards";
 
 export const metadata = createSeoMetadata({
   title: "Hobson Lodge | Auckland CBD Hostel Accommodation",
@@ -247,6 +249,35 @@ export default function Home() {
               <p className="mt-2 text-sm font-bold uppercase">{stat.label}</p>
             </div>
           ))}
+        </div>
+      </section>
+
+      <section className="px-5 py-14 sm:py-20 lg:px-8">
+        <div className="mx-auto max-w-7xl">
+          <div data-reveal className="mb-10 flex flex-col justify-between gap-6 md:flex-row md:items-end">
+            <div>
+              <p className="text-sm font-black uppercase text-[#2f85a7]">Nearby Auckland</p>
+              <h2 className="mt-4 text-4xl font-black uppercase leading-none sm:text-5xl md:text-6xl">
+                Popular stops from Hobson Street.
+              </h2>
+              <p className="mt-5 max-w-2xl text-base leading-7 text-[#3a3024] sm:text-lg sm:leading-8">
+                Walk to city icons, plan waterfront days and reach Auckland venues from the CBD.
+              </p>
+            </div>
+            <Link href="/location" className="text-sm font-bold uppercase underline underline-offset-4 hover:text-[#8c6a0c]">
+              View all nearby
+            </Link>
+          </div>
+          <div className="grid grid-flow-dense gap-5 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4 lg:items-start">
+            {homeLocationCards.slice(0, 6).map((card, index) => (
+              <LocationCardTile
+                key={card.title}
+                card={card}
+                category="Nearby"
+                index={index}
+              />
+            ))}
+          </div>
         </div>
       </section>
 
