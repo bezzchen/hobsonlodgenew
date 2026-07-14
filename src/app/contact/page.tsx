@@ -1,5 +1,5 @@
-import Image from "next/image";
 import ContactForm from "../../components/ContactForm";
+import PageHero from "../../components/PageHero";
 import SiteIcon, { type SiteIconName } from "../../components/SiteIcon";
 import { contactDetails as siteContactDetails, createSeoMetadata } from "../../lib/seo";
 
@@ -58,36 +58,27 @@ const iconBoxClassName =
 
 export default function Contact() {
   return (
-    <main className="bg-[#f8f3e8] pt-20 text-[#18130c] sm:pt-24">
-      <section className="grid lg:grid-cols-[0.9fr_1.1fr]">
-        <div data-reveal className="relative min-h-[260px] sm:min-h-[420px] lg:min-h-[calc(100vh-6rem)]">
-          <Image
-            src="/images/2.jpg"
-            alt="Hobson Lodge guest corridor"
-            fill
-            priority
-            sizes="(min-width: 1024px) 45vw, 100vw"
-            className="object-cover"
-          />
-          <div className="absolute inset-0 bg-[#18130c]/20" />
-        </div>
+    <main className="bg-[#f8f3e8] text-[#18130c]">
+      <PageHero
+        eyebrow="Contact"
+        imageAlt="Hobson Lodge guest corridor"
+        imageSrc="/images/2.jpg"
+        title="Contact us."
+      >
+        <p>
+          Send an enquiry about room availability, arrival time, parking, longer stays or any questions before booking.
+        </p>
+      </PageHero>
 
-        <div className="flex flex-col justify-center px-5 py-12 sm:py-16 lg:px-16">
-          <p data-reveal className="text-sm font-black uppercase text-[#2f85a7]">Contact</p>
-          <h1 data-reveal className="reveal-delay-1 mt-4 text-4xl font-black uppercase leading-none sm:text-5xl md:text-7xl">
-            Contact us.
-          </h1>
-          <p data-reveal className="reveal-delay-2 mt-5 max-w-2xl text-base leading-7 text-[#3a3024] sm:mt-6 sm:text-lg sm:leading-8">
-            Send an enquiry about room availability, arrival time, parking, longer stays or any questions before booking.
-          </p>
-
-          <div className="mt-10 grid gap-4 sm:grid-cols-2">
+      <section className="px-5 py-14 sm:py-20 lg:px-8">
+        <div className="mx-auto max-w-7xl">
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {contactCards.map((detail, index) => (
               <div
                 key={detail.label}
                 data-reveal
                 className={`rounded-xl border border-[#d9b13b]/60 bg-white/60 p-4 shadow-md ${
-                  index % 2 === 1 ? "reveal-delay-1" : ""
+                  index % 3 === 1 ? "reveal-delay-1" : index % 3 === 2 ? "reveal-delay-2" : ""
                 }`}
               >
                 <div className={iconBoxClassName}>

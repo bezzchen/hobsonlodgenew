@@ -1,4 +1,5 @@
 import Link from "next/link";
+import PageHero from "../../components/PageHero";
 import SiteIcon, { type SiteIconName } from "../../components/SiteIcon";
 import { createSeoMetadata } from "../../lib/seo";
 
@@ -7,6 +8,8 @@ export const metadata = createSeoMetadata({
   description:
     "Read Hobson Lodge hostel rules, reception hours, check-in and check-out times, age restriction, key deposit, cancellation policy and guest expectations.",
   path: "/rules",
+  imageUrl: "/images/1.jpg",
+  imageAlt: "Hobson Lodge shared kitchen and dining space",
 });
 
 const rules = [
@@ -97,22 +100,19 @@ const iconBoxClassName =
 
 export default function Rules() {
   return (
-    <main className="bg-[#f8f3e8] pt-20 text-[#18130c] sm:pt-24">
-      <section className="px-5 py-12 sm:py-16 lg:px-8">
-        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
-          <div data-reveal>
-            <p className="text-sm font-black uppercase text-[#2f85a7]">Hostel rules</p>
-            <h1 className="mt-4 text-4xl font-black uppercase leading-none sm:text-5xl md:text-7xl">
-              Rules for every stay.
-            </h1>
-          </div>
-          <p data-reveal className="reveal-delay-1 text-base leading-7 text-[#3a3024] sm:text-lg sm:leading-8">
-            These policies help keep Hobson Lodge clean, secure and comfortable for everyone staying with us.
-          </p>
-        </div>
-      </section>
+    <main className="bg-[#f8f3e8] text-[#18130c]">
+      <PageHero
+        eyebrow="Hostel rules"
+        imageAlt="Hobson Lodge shared kitchen and dining space"
+        imageSrc="/images/1.jpg"
+        title="Rules for every stay."
+      >
+        <p>
+          These policies help keep Hobson Lodge clean, secure and comfortable for everyone staying with us.
+        </p>
+      </PageHero>
 
-      <section className="px-5 pb-14 sm:pb-20 lg:px-8">
+      <section className="px-5 py-14 sm:py-20 lg:px-8">
         <div className="mx-auto grid max-w-7xl gap-4 md:grid-cols-2">
           {rules.map((rule, index) => (
             <article

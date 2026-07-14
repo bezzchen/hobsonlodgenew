@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { GoogleMapsEmbed } from "@next/third-parties/google";
 import LocationCardTile from "../../components/LocationCardTile";
+import PageHero from "../../components/PageHero";
 import { locationCardSections } from "../../lib/locationCards";
 import { getRequiredEnv } from "../../lib/env";
 import { createSeoMetadata } from "../../lib/seo";
@@ -19,22 +20,19 @@ const googleMapsApiKey = getRequiredEnv("NEXT_PUBLIC_GOOGLE_MAPS_API_KEY");
 
 export default function Location() {
   return (
-    <main className="bg-[#f8f3e8] pt-20 text-[#18130c] sm:pt-24">
-      <section className="px-5 py-12 sm:py-16 lg:px-8">
-        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
-          <div data-reveal>
-            <p className="text-sm font-black uppercase text-[#2f85a7]">Location</p>
-            <h1 className="mt-4 text-4xl font-black uppercase leading-none sm:text-5xl md:text-7xl">
-              CBD location.
-            </h1>
-          </div>
-          <p data-reveal className="reveal-delay-1 text-base leading-7 text-[#3a3024] sm:text-lg sm:leading-8">
-            Hobson Lodge is close and convenient, putting central Auckland attractions, transport, supermarket stops and city parks within walking distance.
-          </p>
-        </div>
-      </section>
+    <main className="bg-[#f8f3e8] text-[#18130c]">
+      <PageHero
+        eyebrow="Location"
+        imageAlt="Sky Tower near Hobson Lodge in Auckland CBD"
+        imageSrc="/images/skytower.jpg"
+        title="Auckland on your doorstep."
+      >
+        <p>
+          Hobson Lodge is close and convenient, putting central Auckland attractions, transport, supermarket stops and city parks within walking distance.
+        </p>
+      </PageHero>
 
-      <section className="px-5 pb-12 sm:pb-16 lg:px-8">
+      <section className="px-5 py-12 sm:py-16 lg:px-8">
         <div data-reveal className="mx-auto overflow-hidden rounded-xl border border-[#18130c]/15 bg-white shadow-lg">
           <GoogleMapsEmbed
             apiKey={googleMapsApiKey}

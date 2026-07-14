@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import BookButton from "../../components/BookButton";
+import PageHero from "../../components/PageHero";
 import SiteIcon, { type SiteIconName } from "../../components/SiteIcon";
 import { createSeoMetadata } from "../../lib/seo";
 
@@ -105,22 +106,19 @@ const darkIconBoxClassName =
 
 export default function Rooms() {
   return (
-    <main className="bg-[#f8f3e8] pt-20 text-[#18130c] sm:pt-24">
-      <section className="px-5 py-12 sm:py-16 lg:px-8">
-        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
-          <div data-reveal>
-            <p className="text-sm font-black uppercase text-[#2f85a7]">Our rooms</p>
-            <h1 className="mt-4 text-4xl font-black uppercase leading-none sm:text-5xl md:text-7xl">
-              Cozy and comfortable accommodation.
-            </h1>
-          </div>
-          <p data-reveal className="reveal-delay-1 text-base leading-7 text-[#3a3024] sm:text-lg sm:leading-8">
-            Hobson Lodge offers mixed dormitory beds, a female dormitory option and double rooms with either shared bathroom access or a private ensuite.
-          </p>
-        </div>
-      </section>
+    <main className="bg-[#f8f3e8] text-[#18130c]">
+      <PageHero
+        eyebrow="Our rooms"
+        imageAlt="Dorm beds at Hobson Lodge Auckland"
+        imageSrc="/images/bedin8_1.jpg"
+        title="Cozy and comfortable accommodation."
+      >
+        <p>
+          Hobson Lodge offers mixed dormitory beds, a female dormitory option and double rooms with either shared bathroom access or a private ensuite.
+        </p>
+      </PageHero>
 
-      <section className="px-5 pb-14 sm:pb-20 lg:px-8">
+      <section className="px-5 py-14 sm:py-20 lg:px-8">
         <div className="mx-auto grid max-w-7xl gap-6">
           {roomOptions.map((room, index) => (
             <article

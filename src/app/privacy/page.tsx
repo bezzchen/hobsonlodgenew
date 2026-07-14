@@ -1,3 +1,4 @@
+import PageHero from "../../components/PageHero";
 import { contactDetails, createSeoMetadata } from "../../lib/seo";
 
 export const metadata = createSeoMetadata({
@@ -5,6 +6,8 @@ export const metadata = createSeoMetadata({
   description:
     "How Hobson Lodge collects, uses, stores and protects personal information for enquiries, bookings and website use.",
   path: "/privacy",
+  imageUrl: "/images/6.jpg",
+  imageAlt: "Hobson Lodge shared lounge space",
 });
 
 const policySections = [
@@ -67,27 +70,22 @@ const policySections = [
 
 export default function PrivacyPolicy() {
   return (
-    <main className="bg-[#f8f3e8] pt-20 text-[#18130c] sm:pt-24">
-      <section className="px-5 py-12 sm:py-16 lg:px-8">
-        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
-          <div data-reveal>
-            <p className="text-sm font-black uppercase text-[#2f85a7]">Privacy</p>
-            <h1 className="mt-4 text-4xl font-black uppercase leading-none sm:text-5xl md:text-7xl">
-              Privacy policy.
-            </h1>
-          </div>
-          <div data-reveal className="reveal-delay-1 text-base leading-7 text-[#3a3024] sm:text-lg sm:leading-8">
-            <p>
-              This policy explains how Hobson Lodge collects, uses, stores and protects personal information when you use this website, contact us or arrange accommodation.
-            </p>
-            <p className="mt-4 text-sm font-black uppercase text-[#4f6f57]">
-              Last updated: 4 June 2026
-            </p>
-          </div>
-        </div>
-      </section>
+    <main className="bg-[#f8f3e8] text-[#18130c]">
+      <PageHero
+        eyebrow="Privacy"
+        imageAlt="Hobson Lodge shared lounge space"
+        imageSrc="/images/6.jpg"
+        title="Privacy policy."
+      >
+        <p>
+          This policy explains how Hobson Lodge collects, uses, stores and protects personal information when you use this website, contact us or arrange accommodation.
+        </p>
+        <p className="mt-4 text-sm font-black uppercase text-[#d9b13b]">
+          Last updated: 4 June 2026
+        </p>
+      </PageHero>
 
-      <section className="px-5 pb-14 sm:pb-20 lg:px-8">
+      <section className="px-5 py-14 sm:py-20 lg:px-8">
         <div className="mx-auto grid max-w-7xl gap-5 md:grid-cols-2">
           {policySections.map((section, index) => (
             <article
