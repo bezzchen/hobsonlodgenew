@@ -8,8 +8,11 @@ export const siteDescription =
 export const contactDetails = {
   address: "224 Hobson Street, Auckland CBD, Auckland 1010, New Zealand",
   email: "info@hobsonlodge.co.nz",
-  phoneDisplay: "09 972 9019",
+  phoneDisplay: "+6499729019",
   phoneInternational: "+6499729019",
+  whatsappDisplay: "+64272629096",
+  whatsappInternational: "+64272629096",
+  whatsappUrl: "https://wa.me/64272629096",
 };
 
 export const defaultSeoImage = {
@@ -105,6 +108,18 @@ export const businessStructuredData = {
       description: siteDescription,
       telephone: contactDetails.phoneInternational,
       email: contactDetails.email,
+      contactPoint: [
+        {
+          "@type": "ContactPoint",
+          telephone: contactDetails.phoneInternational,
+          contactType: "international phone",
+        },
+        {
+          "@type": "ContactPoint",
+          telephone: contactDetails.whatsappInternational,
+          contactType: "WhatsApp",
+        },
+      ],
       priceRange: "$",
       address: {
         "@type": "PostalAddress",

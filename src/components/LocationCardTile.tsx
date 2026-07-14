@@ -17,7 +17,7 @@ export default function LocationCardTile({ card, category, index = 0 }: Location
   return (
     <article
       data-reveal
-      className={`group flex min-h-[340px] flex-col overflow-hidden rounded-xl border shadow-lg ${
+      className={`group flex h-full min-h-[340px] flex-col overflow-hidden rounded-xl border shadow-lg ${
         isFeatured
           ? "border-[#18130c]/15 bg-[#18130c] text-[#f8f3e8] lg:col-span-2"
           : "border-[#18130c]/10 bg-white text-[#18130c]"

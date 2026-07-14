@@ -1,10 +1,11 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
+import { contactDetails } from "../lib/seo";
 
 const bookingUrl = "https://hotels.cloudbeds.com/en/reservation/CAZrqh";
-const phoneHref = "tel:+6499729019";
-const phoneLabel = "09 972 9019";
+const phoneHref = `tel:${contactDetails.phoneInternational}`;
+const phoneLabel = contactDetails.phoneDisplay;
 
 type BookButtonProps = {
   children?: React.ReactNode;

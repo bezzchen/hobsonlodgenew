@@ -1,7 +1,7 @@
 import Image from "next/image";
 import ContactForm from "../../components/ContactForm";
 import SiteIcon, { type SiteIconName } from "../../components/SiteIcon";
-import { createSeoMetadata } from "../../lib/seo";
+import { contactDetails as siteContactDetails, createSeoMetadata } from "../../lib/seo";
 
 export const metadata = createSeoMetadata({
   title: "Contact Hobson Lodge Auckland",
@@ -12,22 +12,28 @@ export const metadata = createSeoMetadata({
   imageAlt: "Hobson Lodge guest corridor in Auckland CBD",
 });
 
-const contactDetails = [
+const contactCards = [
   {
     label: "Address",
-    value: "224 Hobson Street, Auckland CBD, Auckland 1010, New Zealand",
+    value: siteContactDetails.address,
     icon: "mapPin",
   },
   {
-    label: "Phone",
-    value: "09 972 9019",
-    href: "tel:+6499729019",
+    label: "International Phone",
+    value: siteContactDetails.phoneDisplay,
+    href: `tel:${siteContactDetails.phoneInternational}`,
+    icon: "phone",
+  },
+  {
+    label: "WhatsApp",
+    value: siteContactDetails.whatsappDisplay,
+    href: siteContactDetails.whatsappUrl,
     icon: "phone",
   },
   {
     label: "Email",
-    value: "info@hobsonlodge.co.nz",
-    href: "mailto:info@hobsonlodge.co.nz",
+    value: siteContactDetails.email,
+    href: `mailto:${siteContactDetails.email}`,
     icon: "mail",
   },
   {
@@ -76,7 +82,7 @@ export default function Contact() {
           </p>
 
           <div className="mt-10 grid gap-4 sm:grid-cols-2">
-            {contactDetails.map((detail, index) => (
+            {contactCards.map((detail, index) => (
               <div
                 key={detail.label}
                 data-reveal
@@ -89,7 +95,12 @@ export default function Contact() {
                 </div>
                 <p className="mt-4 text-sm font-black uppercase text-[#4f6f57]">{detail.label}</p>
                 {detail.href ? (
-                  <a href={detail.href} className="mt-2 block font-semibold hover:text-[#8c6a0c]">
+                  <a
+                    href={detail.href}
+                    className="mt-2 block font-semibold hover:text-[#8c6a0c]"
+                    rel={detail.href.startsWith("http") ? "noreferrer" : undefined}
+                    target={detail.href.startsWith("http") ? "_blank" : undefined}
+                  >
                     {detail.value}
                   </a>
                 ) : (

@@ -268,7 +268,7 @@ export default function Home() {
               View all nearby
             </Link>
           </div>
-          <div className="grid grid-flow-dense gap-5 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4 lg:items-start">
+          <div className="grid grid-flow-dense items-stretch gap-5 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4">
             {homeLocationCards.slice(0, 6).map((card, index) => (
               <LocationCardTile
                 key={card.title}

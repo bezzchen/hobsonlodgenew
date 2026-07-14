@@ -259,16 +259,14 @@ export const locationCardSections: LocationCardSection[] = [
   },
   {
     title: "Recommended Accommodation",
-    intro: "Nearby accommodation options, with Hobson Lodge marked as the CBD base.",
+    intro: "Nearby accommodation options in central Auckland and Newmarket for easy comparison.",
     cards: [
       {
-        title: "Hobson Lodge",
-        distance: "0 m",
-        travel: "You are here",
-        description: "Your Auckland CBD base at 224 Hobson Street, close to Sky Tower, Queen Street and InterCity.",
+        title: "Best Western Newmarket",
+        distance: "4.6 km",
+        travel: "10-15 min drive",
+        description: "Newmarket accommodation at 112 Great South Road, near shops, hospitals, schools and transport.",
         icon: "bed",
-        image: "/images/0.jpg",
-        featured: true,
       },
       {
         title: "Alexander Inn",

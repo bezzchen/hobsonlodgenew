@@ -1,5 +1,6 @@
 import Link from "next/link";
 import BookButton from "./BookButton";
+import { contactDetails } from "../lib/seo";
 
 export default function Footer() {
     return (
@@ -30,8 +31,9 @@ export default function Footer() {
                 <div className="space-y-4 text-sm leading-6">
                     <h3 className="font-bold uppercase text-[#d9b13b]">Contact</h3>
                     <p>
-                        <a href="tel:+6499729019" className="hover:text-[#d9b13b]">09 972 9019</a><br />
-                        <a href="mailto:info@hobsonlodge.co.nz" className="hover:text-[#d9b13b]">info@hobsonlodge.co.nz</a>
+                        <a href={`tel:${contactDetails.phoneInternational}`} className="hover:text-[#d9b13b]">{contactDetails.phoneDisplay}</a><br />
+                        <a href={contactDetails.whatsappUrl} className="hover:text-[#d9b13b]" rel="noreferrer" target="_blank">WhatsApp {contactDetails.whatsappDisplay}</a><br />
+                        <a href={`mailto:${contactDetails.email}`} className="hover:text-[#d9b13b]">{contactDetails.email}</a>
                     </p>
                     <p>
                         Reception: Monday to Sunday, 9:30am - 5pm<br />

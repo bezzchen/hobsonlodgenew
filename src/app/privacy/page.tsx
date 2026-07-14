@@ -1,4 +1,4 @@
-import { createSeoMetadata } from "../../lib/seo";
+import { contactDetails, createSeoMetadata } from "../../lib/seo";
 
 export const metadata = createSeoMetadata({
   title: "Privacy Policy",
@@ -123,13 +123,16 @@ export default function PrivacyPolicy() {
           </div>
           <div className="rounded-xl border border-white/20 bg-white/10 p-6 text-sm leading-7 shadow-lg sm:text-base">
             <p>
-              Hobson Lodge, 224 Hobson Street, Auckland CBD, Auckland 1010, New Zealand
+              Hobson Lodge, {contactDetails.address}
             </p>
             <p className="mt-4">
-              Phone: <a href="tel:+6499729019" className="font-bold text-[#d9b13b] hover:text-white">09 972 9019</a>
+              Phone: <a href={`tel:${contactDetails.phoneInternational}`} className="font-bold text-[#d9b13b] hover:text-white">{contactDetails.phoneDisplay}</a>
             </p>
             <p>
-              Email: <a href="mailto:info@hobsonlodge.co.nz" className="font-bold text-[#d9b13b] hover:text-white">info@hobsonlodge.co.nz</a>
+              WhatsApp: <a href={contactDetails.whatsappUrl} className="font-bold text-[#d9b13b] hover:text-white" rel="noreferrer" target="_blank">{contactDetails.whatsappDisplay}</a>
+            </p>
+            <p>
+              Email: <a href={`mailto:${contactDetails.email}`} className="font-bold text-[#d9b13b] hover:text-white">{contactDetails.email}</a>
             </p>
             <p className="mt-4">
               You can also contact the{" "}

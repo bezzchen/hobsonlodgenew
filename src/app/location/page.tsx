@@ -70,7 +70,7 @@ export default function Location() {
                   {section.intro}
                 </p>
               </div>
-              <div className="grid grid-flow-dense gap-5 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4 lg:items-start">
+              <div className="grid grid-flow-dense items-stretch gap-5 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4">
                 {section.cards.map((card, index) => (
                   <LocationCardTile
                     key={card.title}
