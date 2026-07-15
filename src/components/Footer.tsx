@@ -40,10 +40,14 @@ export default function Footer() {
                         Check-in: 2pm - 5pm<br />
                         After-hours: contact the hotel directly
                     </p>
-                    <Link href="/privacy" className="inline-flex font-bold uppercase text-[#d9b13b] hover:text-white">
-                        Privacy policy
-                    </Link>
                 </div>
+            </div>
+
+            <div className="mx-auto mt-10 flex max-w-7xl flex-col gap-3 border-t border-white/15 pt-5 text-xs font-semibold uppercase text-[#f8f3e8]/75 sm:flex-row sm:items-center sm:justify-between">
+                <p>Hobson Lodge respects guest privacy.</p>
+                <Link href="/privacy" className="text-[#d9b13b] hover:text-white">
+                    Privacy policy
+                </Link>
             </div>
         </footer>
     )

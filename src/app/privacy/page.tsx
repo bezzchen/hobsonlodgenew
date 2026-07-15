@@ -4,7 +4,7 @@ import { contactDetails, createSeoMetadata } from "../../lib/seo";
 export const metadata = createSeoMetadata({
   title: "Privacy Policy",
   description:
-    "How Hobson Lodge collects, uses, stores and protects personal information for enquiries, bookings and website use.",
+    "How Hobson Lodge collects, uses, shares, stores and protects personal information for website enquiries, bookings and accommodation support.",
   path: "/privacy",
   imageUrl: "/images/6.jpg",
   imageAlt: "Hobson Lodge shared lounge space",
@@ -12,38 +12,60 @@ export const metadata = createSeoMetadata({
 
 const policySections = [
   {
+    title: "Who this policy covers",
+    copy: [
+      "This privacy policy applies to personal information collected through this Hobson Lodge website, through the contact form, by phone, by email, through WhatsApp, and when you use links from this website to arrange accommodation.",
+      "Hobson Lodge is based at 224 Hobson Street, Auckland CBD, Auckland 1010, New Zealand.",
+    ],
+  },
+  {
     title: "Information we collect",
     copy: [
-      "We collect personal information you choose to provide when you contact us, make an enquiry, call us, email us, or book accommodation. This may include your name, email address, phone number, enquiry details, arrival information, room preferences and booking-related details.",
-      "We may also collect basic website information such as device, browser, pages viewed and general usage data through analytics tools.",
+      "We collect information you choose to provide, such as your name, email address, phone number, enquiry details, arrival information, room preferences, parking requests, booking-related questions, and messages sent to us.",
+      "We may also collect limited technical information when you use the website, such as pages viewed, approximate location, browser, device, IP address, referral source, and general usage data from analytics, security and hosting tools.",
     ],
   },
   {
-    title: "Why we collect it",
+    title: "Why we use it",
     copy: [
-      "We collect personal information to respond to enquiries, manage accommodation requests, support check-in and after-hours arrival, process booking-related communication, improve the website and meet legal or operational requirements.",
-      "We only ask for information that is reasonably needed for these purposes.",
+      "We use personal information to respond to enquiries, help with room availability, support booking and arrival questions, manage accommodation-related communication, arrange parking where available, support after-hours arrival, improve the website, protect the contact form from abuse, and meet legal or operational requirements.",
+      "We only ask for information that is reasonably needed for these purposes. We do not sell personal information.",
     ],
   },
   {
-    title: "Bookings and third-party services",
+    title: "Bookings and payments",
     copy: [
       "If you choose to book online, you may be taken to our booking provider's website. Information submitted through that booking flow is handled by the booking provider and may also be shared with Hobson Lodge so we can manage your stay.",
-      "Our website may use service providers for contact form email delivery, Google Analytics, Google Maps and website hosting. These providers may process information for us, including outside New Zealand, subject to their own security and privacy practices.",
+      "Payment card information, booking confirmations, cancellation details and booking account records may be handled by the booking or payment provider rather than by this website. Their own privacy terms may also apply.",
     ],
   },
   {
-    title: "How we use and share information",
+    title: "Website services",
     copy: [
-      "We use personal information for the purpose it was provided, or for directly related purposes. We do not sell personal information.",
-      "We may share information with staff, booking and technology providers, payment or accommodation service providers, professional advisers, or authorities where required by law or necessary to protect guests, staff, property or business operations.",
+      "This website may use service providers for contact form email delivery, reCAPTCHA Enterprise spam protection, Google Maps, Google Analytics, website hosting, website security, and booking links.",
+      "These providers may process technical or contact information for us, including outside New Zealand, subject to their own security and privacy practices.",
     ],
   },
   {
-    title: "Security and retention",
+    title: "Cookies and similar tools",
     copy: [
-      "We take reasonable steps to protect personal information from loss, unauthorised access, misuse, disclosure or alteration.",
-      "We keep personal information only for as long as needed for the purpose it was collected, to manage accommodation records, resolve enquiries, meet accounting or legal obligations, or support legitimate business needs.",
+      "Our website may use cookies or similar technologies to help the website work, understand site usage, improve visitor experience, support maps and analytics, and protect the contact form from automated submissions.",
+      "You can usually change cookie settings in your browser. Disabling some cookies may affect maps, booking links, contact form verification, analytics or other parts of the website.",
+    ],
+  },
+  {
+    title: "Sharing information",
+    copy: [
+      "We may share personal information with Hobson Lodge staff, booking and payment providers, email and technology providers, website hosting providers, professional advisers, maintenance or accommodation service providers, and authorities where required by law.",
+      "We may also share information where reasonably necessary to protect guests, staff, property, systems, or business operations.",
+    ],
+  },
+  {
+    title: "Storage, security and retention",
+    copy: [
+      "We take reasonable steps to protect personal information from loss, unauthorised access, misuse, disclosure, alteration or destruction.",
+      "We keep personal information only for as long as needed for the purpose it was collected, to manage accommodation records, resolve enquiries, meet accounting or legal obligations, handle disputes, improve operations, or support legitimate business needs.",
+      "If a privacy breach is likely to cause serious harm, we will take steps required under New Zealand privacy law, including notifying affected people and the Office of the Privacy Commissioner where required.",
     ],
   },
   {
@@ -51,13 +73,6 @@ const policySections = [
     copy: [
       "You can ask us whether we hold personal information about you, request access to it, or ask us to correct it if it is wrong, incomplete or out of date.",
       "To make a privacy request, contact us using the details below. We may need to verify your identity before responding.",
-    ],
-  },
-  {
-    title: "Cookies and analytics",
-    copy: [
-      "Our website may use cookies or similar technologies to help the website function, understand site usage and improve visitor experience.",
-      "You can usually change cookie settings in your browser. Disabling some cookies may affect how parts of the website work.",
     ],
   },
   {
@@ -81,7 +96,7 @@ export default function PrivacyPolicy() {
           This policy explains how Hobson Lodge collects, uses, stores and protects personal information when you use this website, contact us or arrange accommodation.
         </p>
         <p className="mt-4 text-sm font-black uppercase text-[#d9b13b]">
-          Last updated: 4 June 2026
+          Last updated: 15 July 2026
         </p>
       </PageHero>
 
