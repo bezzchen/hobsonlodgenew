@@ -8,11 +8,8 @@ type LocationCardTileProps = {
   index?: number;
 };
 
-const defaultImage = "/images/2.jpg";
-
 export default function LocationCardTile({ card, category, index = 0 }: LocationCardTileProps) {
   const isFeatured = Boolean(card.featured);
-  const image = card.image ?? defaultImage;
 
   return (
     <article
@@ -25,22 +22,23 @@ export default function LocationCardTile({ card, category, index = 0 }: Location
         index % 4 === 1 ? "reveal-delay-1" : index % 4 === 2 ? "reveal-delay-2" : index % 4 === 3 ? "reveal-delay-3" : ""
       }`}
     >
-      {isFeatured ? (
-        <div className="relative aspect-[16/9] overflow-hidden">
+      <div className={`relative overflow-hidden ${isFeatured ? "aspect-[16/9]" : "aspect-[16/10]"}`}>
           <Image
-            src={image}
-            alt={card.title}
+            src={card.image}
+            alt={`${card.title} near Hobson Lodge`}
             fill
-            sizes="(min-width: 1024px) 50vw, (min-width: 640px) 100vw, 100vw"
+            sizes={isFeatured
+              ? "(min-width: 1024px) 50vw, (min-width: 640px) 100vw, 100vw"
+              : "(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+            }
             className="object-cover transition-transform duration-500 group-hover:scale-105"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#18130c]/80 via-[#18130c]/25 to-transparent" />
+          <div className={`absolute inset-0 ${isFeatured ? "bg-gradient-to-t from-[#18130c]/80 via-[#18130c]/25 to-transparent" : "bg-gradient-to-t from-[#18130c]/30 to-transparent"}`} />
           <p className="absolute left-4 top-4 flex max-w-[calc(100%-2rem)] items-center gap-2 rounded-full bg-[#d9b13b] px-4 py-2 text-xs font-black uppercase text-[#18130c] shadow-lg">
             <SiteIcon className="h-4 w-4" name={card.icon} />
             {card.travel}
           </p>
-        </div>
-      ) : null}
+      </div>
 
       <div className="flex flex-1 flex-col p-5 sm:p-6">
         <div className="flex items-start justify-between gap-4">

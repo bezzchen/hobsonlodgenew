@@ -6,7 +6,7 @@ export type LocationCard = {
   travel: string;
   description: string;
   icon: SiteIconName;
-  image?: string;
+  image: string;
   featured?: boolean;
   home?: boolean;
 };
@@ -28,6 +28,7 @@ export const locationCardSections: LocationCardSection[] = [
         travel: "10-15 min drive",
         description: "A wildlife and conservation day out near Western Springs, with native and international animals.",
         icon: "tent",
+        image: "/images/aucklandzoo.jpg",
         home: true,
       },
       {
@@ -36,6 +37,7 @@ export const locationCardSections: LocationCardSection[] = [
         travel: "15-20 min drive",
         description: "Planetarium shows, astronomy exhibits and night-sky sessions near One Tree Hill.",
         icon: "sparkle",
+        image: "/images/stardome.jpeg",
       },
       {
         title: "Kelly Tarlton's Antarctic Encounter",
@@ -43,6 +45,7 @@ export const locationCardSections: LocationCardSection[] = [
         travel: "12-18 min drive",
         description: "Aquarium tunnels, penguin encounters and Antarctic displays along Tamaki Drive.",
         icon: "compass",
+        image: "/images/kellytarlton.jpg",
       },
       {
         title: "New Zealand National Maritime Museum",
@@ -50,7 +53,7 @@ export const locationCardSections: LocationCardSection[] = [
         travel: "20-25 min walk",
         description: "Harbour-side stories, maritime history and waterfront access near Viaduct Harbour.",
         icon: "museum",
-        image: "/images/skytower.jpg",
+        image: "/images/maritimemuseum.jpg",
         featured: true,
         home: true,
       },
@@ -60,6 +63,7 @@ export const locationCardSections: LocationCardSection[] = [
         travel: "18-25 min drive",
         description: "Large concerts, sports fixtures and entertainment events in Penrose.",
         icon: "calendar",
+        image: "/images/mtsmart.jpg",
       },
     ],
   },
@@ -83,6 +87,7 @@ export const locationCardSections: LocationCardSection[] = [
         travel: "10-15 min drive",
         description: "Newmarket fashion, dining, rooftop restaurants, cinema access and retail essentials.",
         icon: "shopping",
+        image: "/images/westfield.webp",
       },
       {
         title: "Woolworths Supermarket",
@@ -90,6 +95,7 @@ export const locationCardSections: LocationCardSection[] = [
         travel: "9 min walk",
         description: "A nearby grocery stop for snacks, supplies and shared-kitchen basics.",
         icon: "shopping",
+        image: "/images/woolworths.png",
         home: true,
       },
       {
@@ -98,6 +104,7 @@ export const locationCardSections: LocationCardSection[] = [
         travel: "12 min walk",
         description: "Central city movie sessions close to Queen Street dining and nightlife.",
         icon: "tv",
+        image: "/images/eventcinema.jpg",
       },
       {
         title: "Princes Wharf",
@@ -105,6 +112,7 @@ export const locationCardSections: LocationCardSection[] = [
         travel: "8-12 min drive",
         description: "Waterfront dining, harbour views, ferry links and downtown evening plans.",
         icon: "mapPin",
+        image: "/images/princeswharf.avif",
       },
       {
         title: "Mission Bay",
@@ -112,6 +120,7 @@ export const locationCardSections: LocationCardSection[] = [
         travel: "15-22 min drive",
         description: "Beachfront dining, promenade walks and Waitemata Harbour views.",
         icon: "tent",
+        image: "/images/missionbay.jpg",
       },
     ],
   },
@@ -125,6 +134,7 @@ export const locationCardSections: LocationCardSection[] = [
         travel: "12-18 min drive",
         description: "Exhibitions, shows and major public events near Greenlane and Epsom.",
         icon: "calendar",
+        image: "/images/asbshowgrounds.jpg",
       },
       {
         title: "One Tree Hill",
@@ -132,6 +142,7 @@ export const locationCardSections: LocationCardSection[] = [
         travel: "15-20 min drive",
         description: "Historic volcanic parkland with walking tracks, open lawns and city views.",
         icon: "tent",
+        image: "/images/onetreehill.jpg",
       },
       {
         title: "Ellerslie Racecourse",
@@ -139,6 +150,7 @@ export const locationCardSections: LocationCardSection[] = [
         travel: "15-22 min drive",
         description: "Racing, events and conference facilities close to Greenlane.",
         icon: "calendar",
+        image: "/images/ellerslieevent.jpg",
       },
       {
         title: "Eden Park",
@@ -146,7 +158,7 @@ export const locationCardSections: LocationCardSection[] = [
         travel: "10-15 min drive",
         description: "New Zealand's national stadium for rugby, cricket, concerts and major fixtures.",
         icon: "calendar",
-        image: "/images/3.jpg",
+        image: "/images/edenpark.jpg",
         featured: true,
         home: true,
       },
@@ -156,6 +168,7 @@ export const locationCardSections: LocationCardSection[] = [
         travel: "8-12 min drive",
         description: "Central Auckland arena for concerts, international acts, sports and large events.",
         icon: "calendar",
+        image: "/images/sparkarena.webp",
         home: true,
       },
     ],
@@ -170,6 +183,7 @@ export const locationCardSections: LocationCardSection[] = [
         travel: "12-18 min drive",
         description: "Specialist outpatient services and clinical care near the Greenlane corridor.",
         icon: "shield",
+        image: "/images/greenlanehospital.jpg",
       },
       {
         title: "Mercy Ascot Hospital Epsom",
@@ -177,6 +191,7 @@ export const locationCardSections: LocationCardSection[] = [
         travel: "12-18 min drive",
         description: "Private healthcare, appointments and specialist services in Epsom.",
         icon: "shield",
+        image: "/images/mercyascot.jpg",
       },
       {
         title: "Ascot Hospital",
@@ -184,6 +199,7 @@ export const locationCardSections: LocationCardSection[] = [
         travel: "12-18 min drive",
         description: "Private surgical and medical care within easy driving reach from the CBD.",
         icon: "shield",
+        image: "/images/ascothospital.jpg",
       },
       {
         title: "Auckland Hospital",
@@ -191,7 +207,7 @@ export const locationCardSections: LocationCardSection[] = [
         travel: "6-10 min drive",
         description: "Major public hospital beside Auckland Domain and the central medical precinct.",
         icon: "shield",
-        image: "/images/aucklandmuseum.jpg",
+        image: "/images/aucklandhospital.jpg",
         featured: true,
       },
     ],
@@ -216,6 +232,7 @@ export const locationCardSections: LocationCardSection[] = [
         travel: "12-18 min drive",
         description: "Independent boys' school in Epsom, reachable from the CBD by a short drive.",
         icon: "university",
+        image: "/images/dilworth.avif",
       },
       {
         title: "Diocesan School for Girls",
@@ -223,6 +240,7 @@ export const locationCardSections: LocationCardSection[] = [
         travel: "12-18 min drive",
         description: "Independent girls' school near Epsom and Remuera.",
         icon: "university",
+        image: "/images/dio.jpg",
       },
       {
         title: "St Cuthbert's College",
@@ -230,6 +248,7 @@ export const locationCardSections: LocationCardSection[] = [
         travel: "12-18 min drive",
         description: "Independent girls' college on Market Road, south of Newmarket.",
         icon: "university",
+        image: "/images/stcuths.webp",
       },
       {
         title: "Epsom Girls Grammar School",
@@ -237,6 +256,7 @@ export const locationCardSections: LocationCardSection[] = [
         travel: "10-15 min drive",
         description: "Public girls' high school close to Epsom, Newmarket and the Domain side of town.",
         icon: "university",
+        image: "/images/eggs.avif",
       },
       {
         title: "Auckland Grammar School",
@@ -244,6 +264,7 @@ export const locationCardSections: LocationCardSection[] = [
         travel: "8-12 min drive",
         description: "Public boys' high school beside Auckland Domain and central transport links.",
         icon: "university",
+        image: "/images/ags.jpg",
       },
       {
         title: "Auckland Museum & Domain",
@@ -267,6 +288,7 @@ export const locationCardSections: LocationCardSection[] = [
         travel: "10-15 min drive",
         description: "Newmarket accommodation at 112 Great South Road, near shops, hospitals, schools and transport.",
         icon: "bed",
+        image: "/images/bestwestern.jpg",
       },
       {
         title: "Alexander Inn",
@@ -274,6 +296,7 @@ export const locationCardSections: LocationCardSection[] = [
         travel: "10-15 min drive",
         description: "Newmarket accommodation option near shopping, hospitals, schools and transport.",
         icon: "bed",
+        image: "/images/alexanderinn.jpg",
       },
     ],
   },
